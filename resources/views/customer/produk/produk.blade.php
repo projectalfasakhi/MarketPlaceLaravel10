@@ -78,9 +78,18 @@
                             <div class="card">
                                 <div class="card-body">
                                     <!--end ribbon-->
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <br>
                                     <img src="/produk/{{ $data->foto_produk }}" alt="" class="rounded d-block"
                                         height="180" width="285">
                                     <div class="d-flex justify-content-between align-items-center my-4">
+                                        
                                         <div>
                                             <p class="text-muted mb-2">{{ Str::title($data->nama_kategori) }}</p>
                                             <a href="{{ route('customer.produk_detail', $data->id_produk) }}" class="header-title">{{ Str::title($data->nama_produk) }}</a>
@@ -89,6 +98,7 @@
                                             <h5 class="text-dark mt-0 mb-2">{{ rupiah($data->harga_produk) }}</h5>
                                         </div>
                                     </div>
+                                    
                                     <div class="d-grid">
                                         <a href="{{ route('customer.produk_detail', $data->id_produk) }}" class="btn btn-de-warning">Lihat Produk</a>
                                     </div>

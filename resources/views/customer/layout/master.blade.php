@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <title>Dapur Anita</title>
-    <link rel="shortcut icon" href="/dapuranita/logo1.png">
+    <title>MarketPlace</title>
+    <link rel="shortcut icon" href="/dapuranita/logo.png">
     <!-- Favicon-->
     @yield('css')
 

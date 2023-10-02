@@ -38,8 +38,8 @@
                                             <img src="/dapuranita/logo1.png" height="50" alt="logo"
                                                 class="auth-logo">
                                         </a>
-                                        <h4 class="mt-3 mb-1 fw-semibold font-18">Selamat Datang Di Dapur Anita</h4>
-                                        <br><center><p>Repost by <a href='https://stokcoding.com/' title='StokCoding.com' target='_blank'>StokCoding.com</a></p></center>
+                                        <h4 class="mt-3 mb-1 fw-semibold font-18">Selamat Datang Di Halal.id Store</h4>
+                                        <br><center><p>Repost by <a href='h#' title='StokCoding.com' target='_blank'>Halal.id</a></p></center>
 
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@
                                     <!--end form-->
                                     <div class="m-3 text-center text-muted">
                                         <p class="mb-0">Belum Memiliki Akun ? <a href="{{ route('register') }}"
-                                                class="text-primary ms-2">Daftar Gratis</a></p>
+                                                class="text-primary ms-2">Daftar</a></p>
                                     </div>
                                 </div>
                                 <!--end card-body-->
@@ -106,8 +106,9 @@
                         <div class="col-md-7 col-xl-9 col-lg-8  p-0 vh-100 d-flex justify-content-center auth-bg">
                             <div class="accountbg d-flex align-items-center">
                                 <div class="account-title text-center text-white">
-                                    <h1 class="text-white">Aneka Produk Makanan</h1>
-                                    <p class="font-18 mt-3">Variasi Makanan yang Berlimpah Baik Untuk Personal maupun Acara Keluarga</p>
+                                    <h1 class="font-100 mt-3">بِسْمِ اللَّهِ الرحمن الرَّحِيمِ</h1>
+                                    <h1 class="text-white">Halal.id store</h1>
+                                 
                                     <div class="border w-25 mx-auto border-warning"></div>
                                 </div>
                             </div>

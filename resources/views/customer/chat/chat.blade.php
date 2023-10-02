@@ -76,7 +76,7 @@
                             </div><!-- media-left -->
                             <div class="media-body">
                                 <div>
-                                    <h6 class="m-0">Admin Dapur Anita</h6>
+                                    <h6 class="m-0">Admin MarketPlace</h6>
                                 </div>
                             </div><!-- end media-body -->
                         </a>

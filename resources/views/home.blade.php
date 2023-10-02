@@ -4,7 +4,7 @@
 @section('content')
 
 
-
+<br>
 <br>
 <!DOCTYPE html>
 <html lang="en">

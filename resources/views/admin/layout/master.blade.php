@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <title>Dapur Anita</title>
+    <title>MarketPlace</title>
     <link rel="shortcut icon" href="/dapuranita/logo1.png">
     <!-- Favicon-->
     @yield('css')
@@ -121,9 +121,9 @@
         &copy;
         <script>
             document.write(new Date().getFullYear())
-        </script> Metrica | Repost by <a href='https://stokcoding.com/' title='StokCoding.com' target='_blank'>StokCoding.com</a>
+        </script> instagram | Repost by:@<a href='https://www.instagram.com/skhifrja_/?next=%2F' title='StokCoding.com' target='_blank'>skhifrja_</a>
         <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i
-                class="mdi mdi-heart text-danger"></i> by Dapur Anita</span>
+                class="mdi mdi-star text-danger"></i> by Halal.Id</span>
     </footer>
     <!-- end Footer -->
     <!--end footer-->

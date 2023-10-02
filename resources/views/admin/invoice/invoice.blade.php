@@ -99,11 +99,10 @@
                                 <div class="">
                                     <address class="font-13">
                                         <strong class="font-14">Pengirim :</strong><br>
-                                        Dapur Anita<br>
-                                        Perumahan Griya Mutiara Prima No. C3<br>
-                                        Ds. Mororejo, RT.01/RW.02
-                                        Kec. Kaliwungu Kab.Kendal, Jawa Tengah<br>
-                                        <abbr title="Phone">No. Telp:</abbr> 0857-4059-0305
+                                       Halal.Id<br>
+                                        Ciawi amaliah<br>
+                                        Kp.Tipar RT01/04<br>
+                                        <abbr title="Phone">No. Telp:</abbr> 
                                     </address>
                                 </div>
                             </div>
@@ -177,7 +176,7 @@
                             <!--end col-->
                             <div class="col-lg-6 align-self-center">
                                 <div class="float-none float-md-end" style="width: 30%;">
-                                    <small>Dapur Anita</small>
+                                    <small>Halal.Id</small>
                                     <img src="/dapuranita/logo1.png" alt="" class="mt-2 mb-1"
                                         height="20">
                                 </div>
