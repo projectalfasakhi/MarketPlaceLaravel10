@@ -16,15 +16,22 @@
     <!-- Favicon-->
     @yield('css')
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
 
 
     <!-- App css -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    {{-- <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/owl.css"> --}}
     <link href="/metrica/dist/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/metrica/dist/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="/metrica/dist/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ asset('ecommerce-html-template/lib/slick/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('ecommerce-html-template/lib/slick/slick-theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('ecommerce-html-template/css/style.css') }}" rel="stylesheet">
 
 </head>
 
