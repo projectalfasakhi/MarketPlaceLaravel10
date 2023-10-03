@@ -381,7 +381,7 @@
                                     </div>
                                     <div class="product-image">
                                         <a href="product-detail.html">
-                                            <img src="img/product-10.jpg" alt="Product Image">
+                                            <img src="{{asset('img/product-10.jpg')}}" alt="Product Image">
                                         </a>
                                         <div class="product-action">
                                             <a href="#"><i class="fa fa-cart-plus"></i></a>
@@ -535,6 +535,8 @@
                             </ul>
                         </nav>
                     </div>
+                    
+                 
                     
                     <div class="sidebar-widget brands">
                         <h2 class="title">Our Brands</h2>
