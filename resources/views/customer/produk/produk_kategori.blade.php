@@ -60,27 +60,41 @@
                         }
                     @endphp
                     @forelse ($produk as $data)
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <!--end ribbon-->
-                                    <img src="/produk/{{ $data->foto_produk }}" alt="" class="rounded d-block"
-                                        height="180" width="285">
-                                    <div class="d-flex justify-content-between align-items-center my-4">
-                                        <div>
-                                            <p class="text-muted mb-2">{{ Str::title($data->nama_kategori) }}</p>
-                                            <a href="{{ route('customer.produk_detail', $data->id_produk) }}" class="header-title">{{ Str::title($data->nama_produk) }}</a>
-                                        </div>
-                                        <div>
-                                            <h5 class="text-dark mt-0 mb-2">{{ rupiah($data->harga_produk) }}</h5>
-                                        </div>
-                                    </div>
-                                    <div class="d-grid">
-                                        <a href="{{ route('customer.produk_detail', $data->id_produk) }}" class="btn btn-de-warning">Lihat Produk</a>
-                                    </div>
+                <div class="col-md-4">
+                        <div class="row">
+                        <div class="product-item">
+                            <div class="product-title">
+                                <a href="#">{{ Str::title($data->nama_produk) }}</a>
+                                <div class="ratting">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
                                 </div>
                             </div>
+                            <div class="product-image">
+                                <a href="product-detail.html">
+                                    <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
+                                </a>
+                                <div class="product-action">
+                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                    <a href="{{ route('customer.produk_detail', $data->id_produk) }}"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <h3>{{ rupiah($data->harga_produk) }}</h3>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+
+                            </div>
+                            <div class="product-price">
+                                {{-- <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a> --}}
+                            </div>
                         </div>
+                        </div>
+                    </div>
+                </div>
                     @empty
                     <div class="alert alert-outline-danger" role="alert">
                         <strong>Maaf </strong> Produk Saat ini Tidak Tersedia.

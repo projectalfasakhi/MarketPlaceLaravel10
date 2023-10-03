@@ -308,55 +308,34 @@
                                         @endphp
                                     </p>
                                 </div>
-                                <div id="specification" class="container tab-pane fade">
-                                    <h4>Product specification</h4>
-                                    <ul>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                    </ul>
-                                </div>
-                                <div id="reviews" class="container tab-pane fade">
-                                    <div class="reviews-submitted">
-                                        <div class="reviewer">Phasellus Gravida - <span>01 Jan 2020</span></div>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
+                             <h4>Komentar Teratas</h4>
+                            <div class="row">
+                                @foreach ( $komentar as $komentar)
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="media">
+                                                        <img class="d-flex align-self-center me-3 rounded-circle"
+                                                            src="assets/images/small/opp-1.png" alt="" height="50">
+                                                        <div class="media-body align-self-center">
+                                                            <h4 class="mt-0 mb-1 font-15">{{ Str::upper($komentar->name) }}</h4>
+                                                            <p class="text-mute">{{ $komentar->komentar_produk }}</p>
+                                                        </div>
+                                                        <!--end media-body-->
+                                                    </div>
+                                                    <!--end media-->
+                                                </div>
+                                            </div>
+                                            <!--end row-->
                                         </div>
-                                        <p>
-                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-                                        </p>
-                                    </div>
-                                    <div class="reviews-submit">
-                                        <h4>Give your Review:</h4>
-                                        <div class="ratting">
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                        <div class="row form">
-                                            <div class="col-sm-6">
-                                                <input type="text" placeholder="Name">
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <input type="email" placeholder="Email">
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <textarea placeholder="Review"></textarea>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <button>Submit</button>
-                                            </div>
-                                        </div>
+                                        <!--end card-body-->
                                     </div>
                                 </div>
+                                @endforeach
+                            </div>
+
                             </div>
                         </div>
                     </div>
@@ -575,61 +554,61 @@
     <!-- Brand Start -->
     <div class="brand">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="mdi mdi-truck-fast text-success font-30"></i>
-                            <h4 class="header-title">Fast Delivery</h4>
-                            <p class="text-muted mb-0">
-                                Pengiriman Menggunakan Biro Jasa Terpecaya Yaitu JNE
-                            </p>
-                        </div>
-                        <!--end card-body-->
+         <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-truck-fast text-success font-30"></i>
+                        <h4 class="header-title">Fast Delivery</h4>
+                        <p class="text-muted mb-0">
+                            Pengiriman Menggunakan Biro Jasa Terpecaya Yaitu JNE
+                        </p>
                     </div>
-                    <!--end card-->
+                    <!--end card-body-->
                 </div>
-                <div class="col-lg-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="mdi mdi-refresh text-danger font-30"></i>
-                            <h4 class="header-title">Returns in 30 Days</h4>
-                            <p class="text-muted mb-0">
-                                Jaminan Uang Kembali Apa Bila Barang Tidak Sampai
-                            </p>
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                </div>
-                <div class="col-lg-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="mdi mdi-headset text-warning font-30"></i>
-                            <h4 class="header-title">Online Support 24/7</h4>
-                            <p class="text-muted mb-0">
-                                Customer Support Hallal.id Store Siap Melayani Pada Jam Kerja 08.00 - 16.00.
-                            </p>
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                </div>
-                <div class="col-lg-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="mdi mdi-wallet text-purple font-30"></i>
-                            <h4 class="header-title">Secure Payment</h4>
-                            <p class="text-muted mb-0">
-                                Pembayaran Aman Menggunakan Sistem Transfer Pembayaran Bank Konvensional
-                            </p>
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                </div> 
-                <!--end col-->
+                <!--end card-->
             </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-refresh text-danger font-30"></i>
+                        <h4 class="header-title">Returns in 30 Days</h4>
+                        <p class="text-muted mb-0">
+                            Jaminan Uang Kembali Apa Bila Barang Tidak Sampai
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-headset text-warning font-30"></i>
+                        <h4 class="header-title">Online Support 24/7</h4>
+                        <p class="text-muted mb-0">
+                            Customer Support Dapur Anita Siap Melayani Pada Jam Kerja 08.00 - 16.00.
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-wallet text-purple font-30"></i>
+                        <h4 class="header-title">Secure Payment</h4>
+                        <p class="text-muted mb-0">
+                            Pembayaran Aman Menggunakan Sistem Transfer Pembayaran Bank Konvensional
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div> 
+            <!--end col-->
+        </div>
         </div>
 
     </div>

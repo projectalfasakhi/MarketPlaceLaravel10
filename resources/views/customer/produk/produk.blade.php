@@ -173,13 +173,13 @@
                                 </div>
                             </div>
                         </div>
-                        @php
+                        {{-- @php
                         function rupiah($angka)
                         {
                             $hasil_rupiah = 'Rp ' . number_format($angka, 2, ',', '.');
                             return $hasil_rupiah;
                         }
-                    @endphp
+                    @endphp --}}
                         @foreach ($produk as $data)
                     <div class="col-md-4">
                             <div class="row">
@@ -204,7 +204,7 @@
                                     </div>
                                 </div>
                                 <div class="product-price">
-                                    <h3>{{ rupiah($data->harga_produk) }}</h3>
+                                    <h3>{{ ($data->harga_produk) }}</h3>
                                     <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
 
                                 </div>
@@ -242,7 +242,7 @@
                     <div class="sidebar-widget category">
                         <h2 class="title">Category</h2>
                         <nav class="navbar bg-light">
-                            <ul class="navbar-nav">
+                            {{-- <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
                                 </li>
@@ -258,7 +258,17 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
                                 </li>
-                            </ul>
+                            </ul> --}}
+                            <div class="card-body">
+                        <h5 style="text-align: center"> Kategori Produk</h5>
+                        <hr>
+                        @foreach ($kategori as $kategori)
+                            <li style="color:goldenrod;text-align:left">
+                                <a href="{{ route('customer.produk_kategori', $kategori->id_kategori) }}"
+                                    style="color:goldenrod;text-align:left;font-size:15px">{{ Str::title($kategori->nama_kategori) }}</a>
+                            </li>
+                        @endforeach
+                    </div>
                         </nav>
                     </div>
 
@@ -300,13 +310,60 @@
     <!-- Brand Start -->
     <div class="brand">
         <div class="container-fluid">
-            <div class="brand-slider">
-                <div class="brand-item"><img src="img/brand-1.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-2.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-3.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-4.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-6.png" alt=""></div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="mdi mdi-truck-fast text-success font-30"></i>
+                            <h4 class="header-title">Fast Delivery</h4>
+                            <p class="text-muted mb-0">
+                                Pengiriman Menggunakan Biro Jasa Terpecaya Yaitu JNE
+                            </p>
+                        </div>
+                        <!--end card-body-->
+                    </div>
+                    <!--end card-->
+                </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="mdi mdi-refresh text-danger font-30"></i>
+                            <h4 class="header-title">Returns in 30 Days</h4>
+                            <p class="text-muted mb-0">
+                                Jaminan Uang Kembali Apa Bila Barang Tidak Sampai
+                            </p>
+                        </div>
+                        <!--end card-body-->
+                    </div>
+                    <!--end card-->
+                </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="mdi mdi-headset text-warning font-30"></i>
+                            <h4 class="header-title">Online Support 24/7</h4>
+                            <p class="text-muted mb-0">
+                                Customer Support Dapur Anita Siap Melayani Pada Jam Kerja 08.00 - 16.00.
+                            </p>
+                        </div>
+                        <!--end card-body-->
+                    </div>
+                    <!--end card-->
+                </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="mdi mdi-wallet text-purple font-30"></i>
+                            <h4 class="header-title">Secure Payment</h4>
+                            <p class="text-muted mb-0">
+                                Pembayaran Aman Menggunakan Sistem Transfer Pembayaran Bank Konvensional
+                            </p>
+                        </div>
+                        <!--end card-body-->
+                    </div>
+                    <!--end card-->
+                </div> 
+                <!--end col-->
             </div>
         </div>
     </div>
