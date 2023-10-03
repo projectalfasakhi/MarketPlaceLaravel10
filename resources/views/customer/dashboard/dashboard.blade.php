@@ -2,502 +2,447 @@
 
 @section('content')
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="page-title-box">
-                    <div class="row">
-                        <div class="col align-self-center">
-                            <h4 class="page-title pb-md-0">Dashboard</h4>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item active">Dashboard</li>
-                            </ol>
-                        </div>
-                        <!--end col-->
-                        <div class="col-auto align-self-center">
-                            <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
-                                <span class="day-name" id="Day_Name">Today:</span>&nbsp;
-                                <span class="" id="Select_date">
-                                    @phpaa
-                                        echo date('d M');
-                                    @endphp
-                                </span>
-                                <i data-feather="calendar" class="align-self-center icon-xs ms-1"></i>
-                            </a>
-                        </div>
-                        <!--end col-->
-                    </div>
-                    <!--end row-->
-                </div>
-                <!--end page-title-box-->
-            </div>
-            <!--end col-->
-        </div>
-        <br>
-        
-        <br>
+   
 
-        {{-- <div class="row mt-2">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-5 align-self-center">
-                        <div class="p-10">
-                           
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-5 offset-lg-4 text-center">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active">
-                                </li>
-                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="/dapuranita/img-1.jpg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/dapuranita/img-2.jpg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/dapuranita/img-3.jpg" class="d-block w-100" alt="...">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <!--end col-->
-                </div>
-            </div>
-        </div>
-        
+    <br>
+<br>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Shopee pink</title>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <meta content="eCommerce HTML Template Free Download" name="keywords">
+      <meta content="eCommerce HTML Template Free Download" name="description">
 
-        <div class="row mt-3">
-            <div class="col-lg-12">
-                <div class="section-title text-center">
-                    <h2 class="title-border"><u>Galery Produk</u></h2>
-                </div>
-            </div>
-        </div>
+      <!-- Favicon -->
+      <link href="img/favicon.ico" rel="icon">
 
-        <div class="row">
-            <div class="col-md-6 col-lg-auto filters-group-wrap">
-                <div class="filters-group mb-3">
-                    <div class="btn-group filter-options">
-                        <button class="btn btn-primary" data-group="fashion">Kue Basah</button>
-                        <button class="btn btn-primary" data-group="animal">Kue Kering</button>
-                        <button class="btn btn-primary" data-group="food">Jajanan Ringan</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
 
-        <div id="grid" class="row g-0">
-            <div class="col-md-4 col-lg-3 picture-item" data-groups='["fashion"]'>
-                <a href="/dapuranita/img-4.jpg" class="lightbox">
-                    <img src="/dapuranita/img-4.jpg" alt="" class="img-fluid" />
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 picture-item picture-item--overlay" data-groups='["food"]'>
-                <a href="/dapuranita/img-5.jpg" class="lightbox">
-                    <img src="/dapuranita/img-5.jpg" alt="" class="img-fluid" />
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 picture-item" data-groups='["animal"]'>
-                <a href="/dapuranita/img-6.jpg" class="lightbox">
-                    <img src="/dapuranita/img-6.jpg" alt="" class="img-fluid" />
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 picture-item picture-item--h2" data-groups='["food"]'>
-                <a href="/dapuranita/img-7.jpg" class="lightbox">
-                    <img src="/dapuranita/img-7.jpg" alt="" class="img-fluid" />
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 picture-item" data-groups='["food", "animal"]'>
-                <a href="/dapuranita/img-8.jpg" class="lightbox">
-                    <img src="/dapuranita/img-8.jpg" alt="" class="img-fluid" />
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 picture-item picture-item--overlay" data-groups='["fashion"]'>
-                <a href="/dapuranita/img-9.jpg" class="lightbox">
-                    <img src="/dapuranita/img-9.jpg" alt="" class="img-fluid" />
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 picture-item picture-item--h2" data-groups='["food"]'>
-                <a href="/dapuranita/img-10.jpg" class="lightbox">
-                    <img src="/dapuranita/img-10.jpg" alt="" class="img-fluid" />
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 picture-item picture-item--h2" data-groups='["fashion"]'>
-                <a href="/dapuranita/img-11.jpg" class="lightbox">
-                    <img src="/dapuranita/img-11.jpg" alt="" class="img-fluid" />
-                </a>
-            </div>
-        </div>
-    </div> --}}
+      <!-- CSS Libraries -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+      <link href="{{ asset('ecommerce-html-template/lib/slick/slick.css') }}" rel="stylesheet">
+      <link href="{{ asset('ecommerce-html-template/lib/slick/slick-theme.css') }}" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
 
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="utf-8">
-            <title>MarketPlace</title>
-            <meta content="width=device-width, initial-scale=1.0" name="viewport">
-            <meta content="eCommerce HTML Template Free Download" name="keywords">
-            <meta content="eCommerce HTML Template Free Download" name="description">
-    
-            <!-- Favicon -->
-            <link href="img/favicon.ico" rel="icon">
-    
-            <!-- Google Fonts -->
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
-    
-            <!-- CSS Libraries -->
-            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-            <link href="{{ asset('ecommerce-html-template/lib/slick/slick.css') }}" rel="stylesheet">
-            <link href="{{ asset('ecommerce-html-template/lib/slick/slick-theme.css') }}" rel="stylesheet">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    
-    
-            <!-- Template Stylesheet -->
-            <link href="{{ asset('ecommerce-html-template/css/style.css') }}" rel="stylesheet">
-        </head>
+      <!-- Template Stylesheet -->
+      <link href="{{ asset('ecommerce-html-template/css/style.css') }}" rel="stylesheet">
+  </head>
 <body>
-  <div class="header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <nav class="navbar bg-light">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Best Selling</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>New Arrivals</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies Clothes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women Clothes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accessories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-md-6">
-                <div class="header-slider normal-slider">
-                    <div class="header-slider-item">
-                        <img src="{{ asset ('img/slider-1.jpg') }}" alt="Slider Image" />
-                        <div class="header-slider-caption">
-                            <p>Some text goes here that describes the image</p>
-                            <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="header-slider-item">
-                        <img src="{{ asset ('img/slider-2.jpg') }}" alt="Slider Image" />
-                        <div class="header-slider-caption">
-                            <p>Some text goes here that describes the image</p>
-                            <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="header-slider-item">
-                        <img src="{{ asset ('img/slider-3.jpg') }}" alt="Slider Image" />
-                        <div class="header-slider-caption">
-                            <p>Some text goes here that describes the image</p>
-                            <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="header-img">
-                    <div class="img-item">
-                        <img src="{{ asset('img/category-1.jpg') }}" />
-                        <a class="img-text" href="">
-                            <p>Some text goes here that describes the image</p>
-                        </a>
-                    </div>
-                    <div class="img-item">
-                        <img src="{{ asset ('img/category-2.jpg') }}" />
-                        <a class="img-text" href="">
-                            <p>Some text goes here that describes the image</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="header">
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-3">
+          <nav class="navbar bg-light">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Best Selling</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>New Arrivals</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies Clothes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women Clothes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accessories</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+      <div class="col-md-6">
+          <div class="header-slider normal-slider">
+              <div class="header-slider-item">
+                  <img src="{{ asset ('img/slider-1.jpg') }}" alt="Slider Image" />
+                  <div class="header-slider-caption">
+                      <p>Some text goes here that describes the image</p>
+                      <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
+                  </div>
+              </div>
+              <div class="header-slider-item">
+                  <img src="{{ asset ('img/slider-2.jpg') }}" alt="Slider Image" />
+                  <div class="header-slider-caption">
+                      <p>Some text goes here that describes the image</p>
+                      <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
+                  </div>
+              </div>
+              <div class="header-slider-item">
+                  <img src="{{ asset ('img/slider-3.jpg') }}" alt="Slider Image" />
+                  <div class="header-slider-caption">
+                      <p>Some text goes here that describes the image</p>
+                      <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-3">
+          <div class="header-img">
+              <div class="img-item">
+                  <img src="{{ asset('img/category-1.jpg') }}" />
+                  <a class="img-text" href="">
+                      <p>Some text goes here that describes the image</p>
+                  </a>
+              </div>
+              <div class="img-item">
+                  <img src="{{ asset ('img/category-2.jpg') }}" />
+                  <a class="img-text" href="">
+                      <p>Some text goes here that describes the image</p>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 </div>
 
 <div class="feature"> 
-  <div class="container-fluid">
-      <div class="row align-items-center">
-          <div class="col-lg-3 col-md-6 feature-col">
-              <div class="feature-content">
-                  <i class="fab fa-cc-mastercard"></i>
-                  <h2>Secure Payment</h2>
-                  <p>
-                      Lorem ipsum dolor sit amet consectetur elit
-                  </p>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 feature-col">
-              <div class="feature-content">
-                  <i class="fa fa-truck"></i>
-                  <h2>Worldwide Delivery</h2>
-                  <p>
-                      Lorem ipsum dolor sit amet consectetur elit
-                  </p>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 feature-col">
-              <div class="feature-content">
-                  <i class="fa fa-sync-alt"></i>
-                  <h2>90 Days Return</h2>
-                  <p>
-                      Lorem ipsum dolor sit amet consectetur elit
-                  </p>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 feature-col">
-              <div class="feature-content">
-                  <i class="fa fa-comments"></i>
-                  <h2>24/7 Support</h2>
-                  <p>
-                      Lorem ipsum dolor sit amet consectetur elit
-                  </p>
-              </div>
-          </div>
-      </div>
-  </div>
+<div class="container-fluid">
+<div class="row align-items-center">
+    <div class="col-lg-3 col-md-6 feature-col">
+        <div class="feature-content">
+            <i class="fab fa-cc-mastercard"></i>
+            <h2>Secure Payment</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur elit
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 feature-col">
+        <div class="feature-content">
+            <i class="fa fa-truck"></i>
+            <h2>Worldwide Delivery</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur elit
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 feature-col">
+        <div class="feature-content">
+            <i class="fa fa-sync-alt"></i>
+            <h2>90 Days Return</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur elit
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 feature-col">
+        <div class="feature-content">
+            <i class="fa fa-comments"></i>
+            <h2>24/7 Support</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur elit
+            </p>
+        </div>
+    </div>
+</div>
+</div>
 </div>
 
 <div class="category">
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-3">
-              <div class="category-item ch-400">
-                  <img src="{{ asset('img/category-3.jpg')}}" />
-                  <a class="category-name" href="">
-                      <p>Some text goes here that describes the image</p>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-3">
+        <div class="category-item ch-400">
+            <img src="{{ asset('img/category-3.jpg')}}" />
+            <a class="category-name" href="">
+                <p>Some text goes here that describes the image</p>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="category-item ch-250">
+            <img src="{{ asset('img/category-4.jpg')}}" />
+            <a class="category-name" href="">
+                <p>Some text goes here that describes the image</p>
+            </a>
+        </div>
+        <div class="category-item ch-150">
+            <img src="{{ asset('img/category-5.jpg')}}" />
+            <a class="category-name" href="">
+                <p>Some text goes here that describes the image</p>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="category-item ch-150">
+            <img src="{{ asset('img/category-6.jpg')}}" />
+            <a class="category-name" href="">
+                <p>Some text goes here that describes the image</p>
+            </a>
+        </div>
+        <div class="category-item ch-250">
+            <img src={{ asset('img/category-7.jpg')}} />
+            <a class="category-name" href="">
+                <p>Some text goes here that describes the image</p>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="category-item ch-400">
+            <img src="{{ asset('img/category-8.jpg')}}" />
+            <a class="category-name" href="">
+                <p>Some text goes here that describes the image</p>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<!-- Recent Product Start -->
+<div class="recent-product product">
+<div class="container-fluid">
+  <div class="section-header">
+      <h1>Recent Product</h1>
+  </div>
+  <div class="row align-items-center product-slider product-slider-4">
+      <div class="col-lg-3">
+          <div class="product-item">
+              <div class="product-title">
+                  <a href="#">Product Name</a>
+                  <div class="ratting">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </div>
+              </div>
+              <div class="product-image">
+                  <a href="product-detail.html">
+                      <img src="{{ asset('img/product-6.jpg')}}" alt="Product Image">
                   </a>
+                  <div class="product-action">
+                      <a href="#"><i class="fa fa-cart-plus"></i></a>
+                      <a href="#"><i class="fa fa-heart"></i></a>
+                      <a href="#"><i class="fa fa-search"></i></a>
+                  </div>
+              </div>
+              <div class="product-price">
+                  <h3><span>$</span>99</h3>
+                  <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
               </div>
           </div>
-          <div class="col-md-3">
-              <div class="category-item ch-250">
-                  <img src="{{ asset('img/category-4.jpg')}}" />
-                  <a class="category-name" href="">
-                      <p>Some text goes here that describes the image</p>
-                  </a>
+      </div>
+      <div class="col-lg-3">
+          <div class="product-item">
+              <div class="product-title">
+                  <a href="#">Product Name</a>
+                  <div class="ratting">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </div>
               </div>
-              <div class="category-item ch-150">
-                  <img src="{{ asset('img/category-5.jpg')}}" />
-                  <a class="category-name" href="">
-                      <p>Some text goes here that describes the image</p>
+              <div class="product-image">
+                  <a href="product-detail.html">
+                      <img src="{{ asset('img/product-7.jpg')}}" alt="Product Image">
                   </a>
+                  <div class="product-action">
+                      <a href="#"><i class="fa fa-cart-plus"></i></a>
+                      <a href="#"><i class="fa fa-heart"></i></a>
+                      <a href="#"><i class="fa fa-search"></i></a>
+                  </div>
+              </div>
+              <div class="product-price">
+                  <h3><span>$</span>99</h3>
+                  <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
               </div>
           </div>
-          <div class="col-md-3">
-              <div class="category-item ch-150">
-                  <img src="{{ asset('img/category-6.jpg')}}" />
-                  <a class="category-name" href="">
-                      <p>Some text goes here that describes the image</p>
-                  </a>
+      </div>
+      <div class="col-lg-3">
+          <div class="product-item">
+              <div class="product-title">
+                  <a href="#">Product Name</a>
+                  <div class="ratting">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </div>
               </div>
-              <div class="category-item ch-250">
-                  <img src={{ asset('img/category-7.jpg')}} />
-                  <a class="category-name" href="">
-                      <p>Some text goes here that describes the image</p>
+              <div class="product-image">
+                  <a href="product-detail.html">
+                      <img src="{{ asset('img/product-8.jpg')}}" alt="Product Image">
                   </a>
+                  <div class="product-action">
+                      <a href="#"><i class="fa fa-cart-plus"></i></a>
+                      <a href="#"><i class="fa fa-heart"></i></a>
+                      <a href="#"><i class="fa fa-search"></i></a>
+                  </div>
+              </div>
+              <div class="product-price">
+                  <h3><span>$</span>99</h3>
+                  <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
               </div>
           </div>
-          <div class="col-md-3">
-              <div class="category-item ch-400">
-                  <img src="{{ asset('img/category-8.jpg')}}" />
-                  <a class="category-name" href="">
-                      <p>Some text goes here that describes the image</p>
+      </div>
+      <div class="col-lg-3">
+          <div class="product-item">
+              <div class="product-title">
+                  <a href="#">Product Name</a>
+                  <div class="ratting">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </div>
+              </div>
+              <div class="product-image">
+                  <a href="product-detail.html">
+                      <img src="{{ asset('img/product-9.jpg')}}" alt="Product Image">
                   </a>
+                  <div class="product-action">
+                      <a href="#"><i class="fa fa-cart-plus"></i></a>
+                      <a href="#"><i class="fa fa-heart"></i></a>
+                      <a href="#"><i class="fa fa-search"></i></a>
+                  </div>
+              </div>
+              <div class="product-price">
+                  <h3><span>$</span>99</h3>
+                  <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3">
+          <div class="product-item">
+              <div class="product-title">
+                  <a href="#">Product Name</a>
+                  <div class="ratting">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </div>
+              </div>
+              <div class="product-image">
+                  <a href="product-detail.html">
+                      <img src="{{ asset('img/product-10.jpg')}}" alt="Product Image">
+                  </a>
+                  <div class="product-action">
+                      <a href="#"><i class="fa fa-cart-plus"></i></a>
+                      <a href="#"><i class="fa fa-heart"></i></a>
+                      <a href="#"><i class="fa fa-search"></i></a>
+                  </div>
+              </div>
+              <div class="product-price">
+                  <h3><span>$</span>99</h3>
+                  <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
               </div>
           </div>
       </div>
   </div>
 </div>
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <!-- Recent Product Start -->
-  <div class="recent-product product">
+</div>
+<div class="footer">
     <div class="container-fluid">
-        <div class="section-header">
-            <h1>Recent Product</h1>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-info">
+                        <p><i class="fa fa-map-marker"></i>123 E Store, Los Angeles, USA</p>
+                        <p><i class="fa fa-envelope"></i>email@example.com</p>
+                        <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h2>Follow Us</h2>
+                    <div class="contact-info">
+                        <div class="social">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h2>Company Info</h2>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Condition</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h2>Purchase Info</h2>
+                    <ul>
+                        <li><a href="#">Pyament Policy</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="row align-items-center product-slider product-slider-4">
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">Product Name</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="{{ asset('img/product-6.jpg')}}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3><span>$</span>99</h3>
-                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
+
+        <div class="row payment align-items-center">
+            <div class="col-md-6">
+                <div class="payment-method">
+                    <h2>We Accept:</h2>
+                    <img src="img/payment-method.png" alt="Payment Method" />
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">Product Name</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="{{ asset('img/product-7.jpg')}}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3><span>$</span>99</h3>
-                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">Product Name</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="{{ asset('img/product-8.jpg')}}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3><span>$</span>99</h3>
-                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">Product Name</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="{{ asset('img/product-9.jpg')}}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3><span>$</span>99</h3>
-                        <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">Product Name</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="{{ asset('img/product-10.jpg')}}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3><span>$</span>99</h3>
-                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
+            <div class="col-md-6">
+                <div class="payment-security">
+                    <h2>Secured By:</h2>
+                    <img src="img/godaddy.svg" alt="Payment Security" />
+                    <img src="img/norton.svg" alt="Payment Security" />
+                    <img src="img/ssl.svg" alt="Payment Security" />
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- Footer End -->
+
+<!-- Footer Bottom Start -->
+<div class="footer-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 copyright">
+                <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+            </div>
+
+            <div class="col-md-6 template-by">
+                <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer Bottom End -->
 <!-- Recent Product End -->
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -509,3 +454,4 @@
 <script src="{{ asset('ecommerce-html-template/js/main.js')}}"></script>
 </body>
 </html>
+@endsection

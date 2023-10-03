@@ -33,9 +33,7 @@
         <!-- LOGO -->
         <div class="brand">
             <a href="index.html" class="logo">
-                <span>
-                    <img src="/dapuranita/logo1.png" alt="logo-small" height="55" width="55">
-                </span>
+               
                 <span>
 
                 </span>
