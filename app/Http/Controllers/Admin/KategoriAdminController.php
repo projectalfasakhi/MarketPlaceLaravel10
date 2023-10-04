@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KategoriAdminController extends Controller
 {
@@ -15,7 +16,7 @@ class KategoriAdminController extends Controller
      */
     public function index()
     {
-        $kategori = Kategori::latest()->paginate(5);
+        $kategori = Kategori::where('created_by1', Auth::user()->id)->latest()->paginate(5);
         return view('admin.kategori.kategori', compact(['kategori']));
     }
 
@@ -43,7 +44,8 @@ class KategoriAdminController extends Controller
 
         Kategori::create([
             'nama_kategori'=>$request->kategori,
-            'deskripsi_kategori'=>$request->deskripsi_kategori
+            'deskripsi_kategori'=>$request->deskripsi_kategori,
+            'created_by1' => Auth::user()->id
         ]);
 
         return back()->with('success','Berhasil Menambahkan Kategori Baru');

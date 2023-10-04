@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Kategori;
 use App\Models\Produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProdukAdminController extends Controller
 {
@@ -18,6 +19,7 @@ class ProdukAdminController extends Controller
     {
         $produk = Produk::join('kategori','kategori.id_kategori','=','produk.id_kategori')
         ->orderBy('nama_produk', 'asc')
+        ->where('created_by', Auth::user()->id)
         ->get();
         return view('admin.produk.produk', compact(['produk']));
     }
@@ -65,6 +67,7 @@ class ProdukAdminController extends Controller
             'harga_produk'=>$harga,
             'deskripsi_produk'=>$request->deskripsi_produk,
             'foto_produk'=>$foto_produk,
+            'created_by'=>Auth::user()->id,
         ]);
 
         return to_route('produk.index')->with('success','Berhasil Menambahkan Produk Baru');

@@ -173,13 +173,13 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- @php
+                        @php
                         function rupiah($angka)
                         {
                             $hasil_rupiah = 'Rp ' . number_format($angka, 2, ',', '.');
                             return $hasil_rupiah;
                         }
-                    @endphp --}}
+                        @endphp
                         @foreach ($produk as $data)
                     <div class="col-md-4">
                             <div class="row">
@@ -204,7 +204,7 @@
                                     </div>
                                 </div>
                                 <div class="product-price">
-                                    <h3>{{ ($data->harga_produk) }}</h3>
+                                    <h3>{{ rupiah($data->harga_produk) }}</h3>
                                     <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
 
                                 </div>
@@ -259,7 +259,7 @@
                                     <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
                                 </li>
                             </ul> --}}
-                            <div class="card-body">
+                    <div class="card-body">
                         <h5 style="text-align: center"> Kategori Produk</h5>
                         <hr>
                         @foreach ($kategori as $kategori)

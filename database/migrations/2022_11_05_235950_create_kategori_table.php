@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id_kategori');
             $table->string('nama_kategori');
             $table->text('deskripsi_kategori')->nullable();
+            $table->integer('created_by1');
             $table->timestamps();
         });
     }

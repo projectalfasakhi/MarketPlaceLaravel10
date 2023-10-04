@@ -34,82 +34,68 @@
       <link href="{{ asset('ecommerce-html-template/css/style.css') }}" rel="stylesheet">
   </head>
 <body>
-<div class="header">
-<div class="container-fluid">
-  <div class="row">
-      <div class="col-md-3">
-          <nav class="navbar bg-light">
-              <ul class="navbar-nav">
-                  <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Best Selling</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>New Arrivals</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies Clothes</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women Clothes</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accessories</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
-                  </li>
-              </ul>
-          </nav>
-      </div>
-      <div class="col-md-6">
-          <div class="header-slider normal-slider">
-              <div class="header-slider-item">
-                  <img src="{{ asset ('img/slider-1.jpg') }}" alt="Slider Image" />
-                  <div class="header-slider-caption">
-                      <p>Some text goes here that describes the image</p>
-                      <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
-                  </div>
-              </div>
-              <div class="header-slider-item">
-                  <img src="{{ asset ('img/slider-2.jpg') }}" alt="Slider Image" />
-                  <div class="header-slider-caption">
-                      <p>Some text goes here that describes the image</p>
-                      <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
-                  </div>
-              </div>
-              <div class="header-slider-item">
-                  <img src="{{ asset ('img/slider-3.jpg') }}" alt="Slider Image" />
-                  <div class="header-slider-caption">
-                      <p>Some text goes here that describes the image</p>
-                      <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <div class="header-img">
-              <div class="img-item">
-                  <img src="{{ asset('img/category-1.jpg') }}" />
-                  <a class="img-text" href="">
-                      <p>Some text goes here that describes the image</p>
-                  </a>
-              </div>
-              <div class="img-item">
-                  <img src="{{ asset ('img/category-2.jpg') }}" />
-                  <a class="img-text" href="">
-                      <p>Some text goes here that describes the image</p>
-                  </a>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
+  <div class="header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <nav class="navbar bg-light ">
+                    <ul class="navbar-nav">
+                        <div class="card-body">
+                        <h5 style="text-align: center"> Kategori Produk</h5>
+                        <hr>
+                        @foreach ($kategori as $kategori)
+                            <li style="color:goldenrod;text-align:left">
+                                <a href="{{ route('customer.produk_kategori', $kategori->id_kategori) }}"
+                                    style="color:goldenrod;text-align:left;font-size:15px">{{ Str::title($kategori->nama_kategori) }}</a>
+                            </li>
+                        @endforeach
+                    </div>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-6">
+                <div class="header-slider normal-slider">
+                    <div class="header-slider-item">
+                        <img src="{{ asset ('img/slider-1.jpg') }}" alt="Slider Image" />
+                        <div class="header-slider-caption">
+                            <p>Some text goes here that describes the image</p>
+                            <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="header-slider-item">
+                        <img src="{{ asset ('img/slider-2.jpg') }}" alt="Slider Image" />
+                        <div class="header-slider-caption">
+                            <p>Some text goes here that describes the image</p>
+                            <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="header-slider-item">
+                        <img src="{{ asset ('img/slider-3.jpg') }}" alt="Slider Image" />
+                        <div class="header-slider-caption">
+                            <p>Some text goes here that describes the image</p>
+                            <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="header-img">
+                    <div class="img-item">
+                        <img src="{{ asset('img/category-1.jpg') }}" />
+                        <a class="img-text" href="">
+                            <p>Some text goes here that describes the image</p>
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <img src="{{ asset ('img/category-2.jpg') }}" />
+                        <a class="img-text" href="">
+                            <p>Some text goes here that describes the image</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="feature"> 
@@ -407,42 +393,221 @@
                 </div>
             </div>
         </div>
-
-        <div class="row payment align-items-center">
-            <div class="col-md-6">
-                <div class="payment-method">
-                    <h2>We Accept:</h2>
-                    <img src="img/payment-method.png" alt="Payment Method" />
+        <div class="row align-items-center product-slider product-slider-4">
+            @php
+                function rupiah($angka)
+                {
+                    $hasil_rupiah = 'Rp ' . number_format($angka, 2, ',', '.');
+                    return $hasil_rupiah;
+                }
+            @endphp
+            @foreach ($produk as $data)
+            <div class="col-lg-3">
+                <div class="product-item">
+                    <div class="product-title">
+                        <a href="#">{{ Str::title($data->nama_produk) }}</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <a href="product-detail.html">
+                            <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
+                        </a>
+                        <div class="product-action">
+                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3>{{ rupiah($data->harga_produk) }}</h3>
+                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="payment-security">
-                    <h2>Secured By:</h2>
-                    <img src="img/godaddy.svg" alt="Payment Security" />
-                    <img src="img/norton.svg" alt="Payment Security" />
-                    <img src="img/ssl.svg" alt="Payment Security" />
+            @endforeach
+            <div class="col-lg-3">
+                <div class="product-item">
+                    <div class="product-title">
+                        <a href="#">Product Name</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <a href="product-detail.html">
+                            <img src="{{ asset('img/product-7.jpg')}}" alt="Product Image">
+                        </a>
+                        <div class="product-action">
+                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3><span>$</span>99</h3>
+                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="product-item">
+                    <div class="product-title">
+                        <a href="#">Product Name</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <a href="product-detail.html">
+                            <img src="{{ asset('img/product-8.jpg')}}" alt="Product Image">
+                        </a>
+                        <div class="product-action">
+                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3><span>$</span>99</h3>
+                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="product-item">
+                    <div class="product-title">
+                        <a href="#">Product Name</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <a href="product-detail.html">
+                            <img src="{{ asset('img/product-9.jpg')}}" alt="Product Image">
+                        </a>
+                        <div class="product-action">
+                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3><span>$</span>99</h3>
+                        <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="product-item">
+                    <div class="product-title">
+                        <a href="#">Product Name</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <a href="product-detail.html">
+                            <img src="{{ asset('img/product-10.jpg')}}" alt="Product Image">
+                        </a>
+                        <div class="product-action">
+                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3><span>$</span>99</h3>
+                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Footer End -->
 
-<!-- Footer Bottom Start -->
-<div class="footer-bottom">
-    <div class="container">
+ <!-- Brand Start -->
+ <div class="brand">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 copyright">
-                <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-truck-fast text-success font-30"></i>
+                        <h4 class="header-title">Fast Delivery</h4>
+                        <p class="text-muted mb-0">
+                            Pengiriman Menggunakan Biro Jasa Terpecaya Yaitu JNE
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
             </div>
-
-            <div class="col-md-6 template-by">
-                <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-refresh text-danger font-30"></i>
+                        <h4 class="header-title">Returns in 30 Days</h4>
+                        <p class="text-muted mb-0">
+                            Jaminan Uang Kembali Apa Bila Barang Tidak Sampai
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
             </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-headset text-warning font-30"></i>
+                        <h4 class="header-title">Online Support 24/7</h4>
+                        <p class="text-muted mb-0">
+                            Customer Support Dapur Anita Siap Melayani Pada Jam Kerja 08.00 - 16.00.
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-wallet text-purple font-30"></i>
+                        <h4 class="header-title">Secure Payment</h4>
+                        <p class="text-muted mb-0">
+                            Pembayaran Aman Menggunakan Sistem Transfer Pembayaran Bank Konvensional
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div> 
+            <!--end col-->
         </div>
     </div>
 </div>
-<!-- Footer Bottom End -->
+<!-- Brand End -->
 <!-- Recent Product End -->
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
