@@ -33,9 +33,6 @@
             </div>
             <!--end col-->
         </div>
-        <br>
-        
-        <br>
 
         {{-- <div class="row mt-2">
             <div class="col-md-12">
