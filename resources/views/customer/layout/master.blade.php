@@ -41,7 +41,7 @@
     <!-- Top Bar Start -->
     <div class="topbar">
         <!-- LOGO -->
-        <div class="brand">
+        <div class="">
             <a href="index.html" class="logo">
                 <span>
                     <img src="/dapuranita/logo1.png" alt="logo-small" height="55" width="55">
