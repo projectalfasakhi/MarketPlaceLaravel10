@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('harga_produk');
             $table->text('deskripsi_produk');
             $table->text('foto_produk')->nullable();
+            $table->integer('created_by');
             $table->timestamps();
         });
     }

@@ -180,32 +180,18 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-                <nav class="navbar bg-light">
+                <nav class="navbar bg-light ">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Best Selling</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>New Arrivals</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies Clothes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women Clothes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accessories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
-                        </li>
+                        <div class="card-body">
+                        <h5 style="text-align: center"> Kategori Produk</h5>
+                        <hr>
+                        @foreach ($kategori as $kategori)
+                            <li style="color:goldenrod;text-align:left">
+                                <a href="{{ route('customer.produk_kategori', $kategori->id_kategori) }}"
+                                    style="color:goldenrod;text-align:left;font-size:15px">{{ Str::title($kategori->nama_kategori) }}</a>
+                            </li>
+                        @endforeach
+                    </div>
                     </ul>
                 </nav>
             </div>
@@ -355,10 +341,18 @@
             <h1>Recent Product</h1>
         </div>
         <div class="row align-items-center product-slider product-slider-4">
+            @php
+                function rupiah($angka)
+                {
+                    $hasil_rupiah = 'Rp ' . number_format($angka, 2, ',', '.');
+                    return $hasil_rupiah;
+                }
+            @endphp
+            @foreach ($produk as $data)
             <div class="col-lg-3">
                 <div class="product-item">
                     <div class="product-title">
-                        <a href="#">Product Name</a>
+                        <a href="#">{{ Str::title($data->nama_produk) }}</a>
                         <div class="ratting">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -369,7 +363,7 @@
                     </div>
                     <div class="product-image">
                         <a href="product-detail.html">
-                            <img src="{{ asset('img/product-6.jpg')}}" alt="Product Image">
+                            <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
                         </a>
                         <div class="product-action">
                             <a href="#"><i class="fa fa-cart-plus"></i></a>
@@ -378,11 +372,12 @@
                         </div>
                     </div>
                     <div class="product-price">
-                        <h3><span>$</span>99</h3>
+                        <h3>{{ rupiah($data->harga_produk) }}</h3>
                         <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
                     </div>
                 </div>
             </div>
+            @endforeach
             <div class="col-lg-3">
                 <div class="product-item">
                     <div class="product-title">
@@ -498,6 +493,68 @@
         </div>
     </div>
 </div>
+
+ <!-- Brand Start -->
+ <div class="brand">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-truck-fast text-success font-30"></i>
+                        <h4 class="header-title">Fast Delivery</h4>
+                        <p class="text-muted mb-0">
+                            Pengiriman Menggunakan Biro Jasa Terpecaya Yaitu JNE
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-refresh text-danger font-30"></i>
+                        <h4 class="header-title">Returns in 30 Days</h4>
+                        <p class="text-muted mb-0">
+                            Jaminan Uang Kembali Apa Bila Barang Tidak Sampai
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-headset text-warning font-30"></i>
+                        <h4 class="header-title">Online Support 24/7</h4>
+                        <p class="text-muted mb-0">
+                            Customer Support Dapur Anita Siap Melayani Pada Jam Kerja 08.00 - 16.00.
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="mdi mdi-wallet text-purple font-30"></i>
+                        <h4 class="header-title">Secure Payment</h4>
+                        <p class="text-muted mb-0">
+                            Pembayaran Aman Menggunakan Sistem Transfer Pembayaran Bank Konvensional
+                        </p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div> 
+            <!--end col-->
+        </div>
+    </div>
+</div>
+<!-- Brand End -->
 <!-- Recent Product End -->
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
