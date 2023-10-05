@@ -31,7 +31,7 @@
     <!-- Top Bar Start -->
     <div class="topbar">
         <!-- LOGO -->
-        <div class="brand">
+        <div class="">
             <a href="index.html" class="logo">
                
                 <span>

@@ -493,10 +493,10 @@
                 <!-- Side Bar Start -->
                 <div class="col-lg-4 sidebar">
                     <div class="sidebar-widget category">
-                        <h2 class="title">Category</h2>
+                        <h2 class="title">Kategori Produk</h2>
                         <nav class="navbar bg-light">
                             <ul class="navbar-nav">
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
                                 </li>
                                 <li class="nav-item">
@@ -510,13 +510,22 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
+                                </li> --}}
+                                @foreach ($kategori as $kategori)
+                                <li style="color:goldenrod;text-align:left">
+                                    <a href="{{ route('customer.produk_kategori', $kategori->id_kategori) }}"
+                                        style="color:goldenrod;text-align:left;font-size:15px">{{ Str::title($kategori->nama_kategori) }}</a>
                                 </li>
+                                @endforeach
                             </ul>
                         </nav>
                     </div>
                     
+<<<<<<< HEAD
                  
                     
+=======
+>>>>>>> 13226cd0132f6f0a1375aa0a1ba77195a0306e0a
                     <div class="sidebar-widget brands">
                         <h2 class="title">Our Brands</h2>
                         <ul>
