@@ -13,7 +13,7 @@
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div>
-                        <!--end col-->
+                        <!--end col-->  
                         <div class="col-auto align-self-center">
                             <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
                                 <span class="day-name" id="Day_Name">Today:</span>&nbsp;
@@ -364,6 +364,36 @@
                         </a>
                         <div class="product-action">
                             <a href="#"><i class="fa fa-cart-plus"></i></a>
+                            {{-- <a href="#"><i class="fa fa-heart"></i></a> --}}
+                            <a href="{{ route('customer.produk_detail', $data->id_produk) }}"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3>{{ rupiah($data->harga_produk) }}</h3>
+                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+            @foreach ($produk as $data)
+            <div class="col-lg-3">
+                <div class="product-item">
+                    <div class="product-title">
+                        <a href="#">{{ Str::title($data->nama_produk) }}</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <a href="product-detail.html">
+                            <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
+                        </a>
+                        <div class="product-action">
+                            <a href="#"><i class="fa fa-cart-plus"></i></a>
                             <a href="#"><i class="fa fa-heart"></i></a>
                             <a href="#"><i class="fa fa-search"></i></a>
                         </div>
@@ -375,35 +405,7 @@
                 </div>
             </div>
             @endforeach
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">Product Name</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="{{ asset('img/product-7.jpg')}}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3><span>$</span>99</h3>
-                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
+            {{-- <div class="col-lg-3">
                 <div class="product-item">
                     <div class="product-title">
                         <a href="#">Product Name</a>
@@ -450,7 +452,7 @@
                         <div class="product-action">
                             <a href="#"><i class="fa fa-cart-plus"></i></a>
                             <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
+                            <a href=""><i class="fa fa-search"></i></a>
                         </div>
                     </div>
                     <div class="product-price">
@@ -486,7 +488,7 @@
                         <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

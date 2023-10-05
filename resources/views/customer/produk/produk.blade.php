@@ -151,42 +151,21 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="product-view-top">
-                                <div class="row">
-                                    <div class="col-md-4">
+                                <div class="row"> 
+                                    @if(count($produk) > 0)
+                                    @else
+                                        <p>Tidak ada hasil pencarian.</p>
+                                    @endif
+                                    <div class="col-md-14">
                                         <div class="product-search">
-                                            <input type="email" value="Search">
-                                            <button><i class="fa fa-search"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="product-short">
-                                            <div class="dropdown">
-                                                <div class="dropdown-toggle" data-toggle="dropdown">Product short by</div>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="#" class="dropdown-item">Newest</a>
-                                                    <a href="#" class="dropdown-item">Popular</a>
-                                                    <a href="#" class="dropdown-item">Most sale</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="product-price-range">
-                                            <div class="dropdown">
-                                                <div class="dropdown-toggle" data-toggle="dropdown">Product price range</div>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="#" class="dropdown-item">$0 to $50</a>
-                                                    <a href="#" class="dropdown-item">$51 to $100</a>
-                                                    <a href="#" class="dropdown-item">$101 to $150</a>
-                                                    <a href="#" class="dropdown-item">$151 to $200</a>
-                                                    <a href="#" class="dropdown-item">$201 to $250</a>
-                                                    <a href="#" class="dropdown-item">$251 to $300</a>
-                                                    <a href="#" class="dropdown-item">$301 to $350</a>
-                                                    <a href="#" class="dropdown-item">$351 to $400</a>
-                                                    <a href="#" class="dropdown-item">$401 to $450</a>
-                                                    <a href="#" class="dropdown-item">$451 to $500</a>
-                                                </div>
-                                            </div>
+                                            <form action="{{ route('produk.search') }}" method="GET">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Cari Produk..."
+                                                        aria-label="Recipient's username" aria-describedby="button-addon2" name="query">
+                                                    <button class="btn btn-de-warning" type="button" id="button-addon2"><i
+                                                            class="fas fa-search"></i></button>
+                                                        </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -282,98 +261,14 @@
                         <h5 style="text-align: center"> Kategori Produk</h5>
                         <hr>
                         @foreach ($kategori as $kategori)
-                            <li style="color:goldenrod;text-align:left">
+                            <li class="nav-item">
                                 <a href="{{ route('customer.produk_kategori', $kategori->id_kategori) }}"
-                                    style="color:goldenrod;text-align:left;font-size:15px">{{ Str::title($kategori->nama_kategori) }}</a>
+                                    style="color:rgb(239, 51, 98);text-align:left;font-size:15px">{{ Str::title($kategori->nama_kategori) }}</a>
                             </li>
                         @endforeach
                     </div>
                         </nav>
                     </div>
-
-                    <div class="sidebar-widget widget-slider">
-                        <div class="sidebar-slider normal-slider">
-                            <div class="product-item">
-                                <div class="product-title">
-                                    <a href="#">Product Name</a>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <div class="product-image">
-                                    <a href="product-detail.html">
-                                        <img src="img/product-10.jpg" alt="Product Image">
-                                    </a>
-                                    <div class="product-action">
-                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                        <a href="#"><i class="fa fa-heart"></i></a>
-                                        <a href="#"><i class="fa fa-search"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h3><span>$</span>99</h3>
-                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                                </div>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-title">
-                                    <a href="#">Product Name</a>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <div class="product-image">
-                                    <a href="product-detail.html">
-                                        <img src="img/product-9.jpg" alt="Product Image">
-                                    </a>
-                                    <div class="product-action">
-                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                        <a href="#"><i class="fa fa-heart"></i></a>
-                                        <a href="#"><i class="fa fa-search"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h3><span>$</span>99</h3>
-                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                                </div>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-title">
-                                    <a href="#">Product Name</a>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <div class="product-image">
-                                    <a href="product-detail.html">
-                                        <img src="img/product-8.jpg" alt="Product Image">
-                                    </a>
-                                    <div class="product-action">
-                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                        <a href="#"><i class="fa fa-heart"></i></a>
-                                        <a href="#"><i class="fa fa-search"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h3><span>$</span>99</h3>
-                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="sidebar-widget brands">
                         <h2 class="title">Our Brands</h2>
                         <ul>

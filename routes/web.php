@@ -84,7 +84,8 @@ Route::middleware(['auth', 'user-access:customer'])->group(function () {
     Route::put('/customer/profile/data/{profile}', [ProfileCustomerController::class, 'update_data'])->name('customer.profile_data_update');
     Route::put('/customer/profile/password/{profile}', [ProfileCustomerController::class, 'update_password'])->name('customer.profile_password_update');
     Route::put('/customer/profile/foto/{profile}', [ProfileCustomerController::class, 'update_foto'])->name('customer.profile_foto_update');
-
+    
+    Route::get('/produk/search', [ProdukCustomerController::class, 'search'])->name('produk.search');
     Route::get('/customer/produk', [ProdukCustomerController::class, 'index'])->name('customer.produk');
     Route::get('/customer/produk/detail/{produk}', [ProdukCustomerController::class, 'detail_produk'])->name('customer.produk_detail');
     Route::get('/customer/produk/kategori/{produk}', [ProdukCustomerController::class, 'search_kategori'])->name('customer.produk_kategori');
