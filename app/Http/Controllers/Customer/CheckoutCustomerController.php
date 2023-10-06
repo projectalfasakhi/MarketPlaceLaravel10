@@ -67,4 +67,4 @@ class CheckoutCustomerController extends Controller
         // dd($ongkir);
         return view('customer.checkout.checkout', compact(['keranjang','ongkir','berat','pengiriman','rekening']));
     }
-}
+} 

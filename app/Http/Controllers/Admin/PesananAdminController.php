@@ -17,7 +17,7 @@ class PesananAdminController extends Controller
         ->select('pesanan.*','alamat_user.alamat_lengkap','alamat_user.nama_penerima','alamat_user.no_telp','alamat_user.nama_prov','alamat_user.nama_kota','alamat_user.no_telp','produk.nama_produk','produk.harga_produk','produk.foto_produk','produk.berat')
         ->where('pesanan.status', 1)
         ->get();
-        return view('admin.pesanan.pesanan_list', compact(['pesanan']));
+        return view('admin.pesanan.pesanan_list', compact(['pesanan'])); 
     }
 
     public function terima_pesanan($id)
