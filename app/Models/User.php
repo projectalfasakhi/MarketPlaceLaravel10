@@ -24,6 +24,7 @@ class User extends Authenticatable
         'type',
         'foto_profile',
         'hp',
+        'is_superadmin',
     ];
 
     /**
