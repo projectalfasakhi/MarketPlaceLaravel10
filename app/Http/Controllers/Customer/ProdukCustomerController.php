@@ -6,19 +6,21 @@ use App\Http\Controllers\Controller;
 use App\Models\Kategori;
 use App\Models\Komentar;
 use App\Models\Produk;
+use App\Models\Resi;
 use Illuminate\Http\Request;
 
 class ProdukCustomerController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $data = Produk::find($request->id_produk);
         $kategori = Kategori::orderBy('nama_kategori', 'asc')->get();
         $produk = Produk::join('kategori','kategori.id_kategori','=','produk.id_kategori')
         ->select('produk.*','kategori.nama_kategori')
         ->orderBy('produk.created_at', 'desc')
         ->get();
 
-        return view('customer.produk.produk', compact(['produk','kategori']))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('customer.produk.produk', compact(['produk','kategori', 'data']))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function detail_produk($id)

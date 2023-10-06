@@ -17,6 +17,7 @@ use App\Http\Controllers\customer\PesananCustomerController;
 use App\Http\Controllers\customer\ProdukCustomerController;
 use App\Http\Controllers\Customer\ProfileCustomerController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardSuperAdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -74,6 +75,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/Laporan', [LaporanPenjualanAdminController::class, 'index'])->name('admin.laporan');
     Route::post('/admin/Laporan', [LaporanPenjualanAdminController::class, 'laporan_cari'])->name('admin.laporan_cari');
 
+});
+
+Route::middleware(['auth', 'user-access:superadmin'])->group(function () {
+    Route::get('/superadmin/dashboard', [DashboardSuperAdminController::class, 'index'])->name('superadmin.dashboard');
 });
 
 Route::middleware(['auth', 'user-access:customer'])->group(function () {
