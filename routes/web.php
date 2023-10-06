@@ -117,3 +117,4 @@ Route::middleware(['auth', 'user-access:customer'])->group(function () {
     Route::post('/customer/chat', [ChatCustomerController::class, 'send'])->name('customer.post_chat');
 });
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
