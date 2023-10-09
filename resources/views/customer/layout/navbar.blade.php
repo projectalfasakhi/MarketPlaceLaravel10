@@ -102,7 +102,7 @@
             <div class="dropdown-divider mb-0"></div>
             <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
-    document.getElementById('logout-form').submit();"><i
+                    document.getElementById('logout-form').submit();"><i
                     class="ti ti-power font-16 me-1 align-text-bottom"></i> Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
@@ -139,7 +139,6 @@
                 <a class="nav-link" href="{{ route('customer.produk') }}">
                     <span><i class="ti ti-building-store menu-icon"></i>Produk</span>
                 </a>
-
             </li>
             @php
                 $notif_pesanan = DB::table('pesanan')
@@ -209,7 +208,6 @@
                 <a class="nav-link" href="{{ route('customer.pesanan_history') }}">
                     <span><i class="ti ti-history menu-icon"></i>Riwayat Pesanan</span>
                 </a>
-
             </li>
             @php
                 $notif_chat = DB::Table('chat')
@@ -224,7 +222,11 @@
                     <span class="badge bg-danger">{{ $notif_chat->count() }}</span>
                     @endif
                 </a>
-
+            </li>
+            <li class="nav-item dropdown parent-menu-item">
+                <a class="nav-link" href="{{ route('superadmin.dashboard') }}">
+                    <span><i class="ti ti-user"></i>SuperAdmin Dashboard</span>
+                </a>
             </li>
             <!--end nav-item-->
             <!--end nav-item-->
