@@ -64,3 +64,4 @@ class ChatAdminController extends Controller
         return back();
     }
 }
+

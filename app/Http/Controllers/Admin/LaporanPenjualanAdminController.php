@@ -34,3 +34,4 @@ class LaporanPenjualanAdminController extends Controller
         return view('admin.laporan.cari_laporan',compact(['pesanan']));
     }
 }
+

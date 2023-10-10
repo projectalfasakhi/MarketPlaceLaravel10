@@ -406,6 +406,11 @@
                 </a>
 
             </li>
+            <li class="nav-item dropdown parent-menu-item">
+                <a class="nav-link" href="{{ route('superadmin.dashboard') }}">
+                    <span><i class="ti ti-user"></i>SuperAdmin Dashboard</span>
+                </a>
+            </li>
             <!--end nav-item-->
             <!--end nav-item-->
         </ul><!-- End navigation menu -->

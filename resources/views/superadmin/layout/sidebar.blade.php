@@ -43,9 +43,9 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{ route('superadmin.laporan') }}" class="nav-link active">
+              <a href="{{ route('admin.dashboard') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Laporan</p>
+                <p>Dashboard Admin</p>
               </a>
             </li>
             <li class="nav-item">

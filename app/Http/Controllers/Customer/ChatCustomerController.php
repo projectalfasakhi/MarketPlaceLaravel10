@@ -35,3 +35,4 @@ class ChatCustomerController extends Controller
         return back();
     }
 }
+

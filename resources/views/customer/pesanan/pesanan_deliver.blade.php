@@ -154,3 +154,4 @@
 @section('js')
     <script src="/js/zoom.js"></script>
 @endsection
+
