@@ -268,11 +268,6 @@
                     </div>
                         </nav>
                     </div>
-<<<<<<< HEAD
-
-                   
-=======
->>>>>>> 13226cd0132f6f0a1375aa0a1ba77195a0306e0a
                     <div class="sidebar-widget brands">
                         <h2 class="title">Our Brands</h2>
                         <ul>
@@ -292,7 +287,7 @@
                         <a href="#">Phasellus</a>
                         <a href="#">pulvinar</a>
                         <a href="#">Curabitur</a>
-                        <a href="#">Fusce</a>
+                        <a href="#">Fusce</a>  
                         <a href="#">Sem quis</a>
                         <a href="#">Mollis metus</a>
                         <a href="#">Sit amet</a>

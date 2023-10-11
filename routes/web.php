@@ -18,6 +18,7 @@ use App\Http\Controllers\customer\ProdukCustomerController;
 use App\Http\Controllers\Customer\ProfileCustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\superadmin\DashboardSuperAdminController;
+use App\Http\Controllers\superadmin\DataSuperAdminController;
 use App\Http\Controllers\superadmin\LaporanPenjualanSuperAdminController;
 use App\Http\Controllers\superadmin\PesananSuperAdminController;
 use App\Http\Controllers\superadmin\ProdukSuperAdminController;
@@ -53,6 +54,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/superadmin/pesanan_masuk/tolak/{pesanan}', [PesananSuperAdminController::class, 'tolak_pesanan'])->name('superadmin.pesanan_tolak');
 
         Route::resource('/superadmin/produk1', ProdukSuperAdminController::class);
+
+        Route::resource('users', DataSuperAdminController::class);
     });
     Route::middleware(['auth', 'user-access:admin'])->group(function () {
 

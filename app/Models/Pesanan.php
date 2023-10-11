@@ -27,4 +27,9 @@ class Pesanan extends Model
         'tipe_pembayaran',
     ];
 
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class, 'created_by');
+    }
+
 }

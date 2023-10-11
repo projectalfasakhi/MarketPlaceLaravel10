@@ -6,18 +6,21 @@ use App\Http\Controllers\Controller;
 use App\Models\Pesanan;
 use App\Models\Produk;
 use App\Models\Resi;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PesananAdminController extends Controller
 {
     public function lihat_pesanan()
     {
+        $adminId = Auth::user()->id;
         $pesanan = Pesanan::join('produk','produk.id_produk','=','pesanan.id_produk')
         ->join('alamat_user','alamat_user.id_user','=','pesanan.id_user')
         ->select('pesanan.*','alamat_user.alamat_lengkap','alamat_user.nama_penerima','alamat_user.no_telp','alamat_user.nama_prov','alamat_user.nama_kota','alamat_user.no_telp','produk.nama_produk','produk.harga_produk','produk.foto_produk','produk.berat')
+        ->where('produk.created_by', $adminId)
         ->where('pesanan.status', 1)
         ->get();
-        return view('admin.pesanan.pesanan_list', compact(['pesanan'])); 
+        return view('admin.pesanan.pesanan_list', compact(['pesanan','adminId'])); 
     }
 
     public function terima_pesanan($id)

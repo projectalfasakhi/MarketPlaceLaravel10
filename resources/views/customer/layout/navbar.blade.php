@@ -223,11 +223,13 @@
                     @endif
                 </a>
             </li>
+            @if (auth()->user()->is_superadmin == 1)
             <li class="nav-item dropdown parent-menu-item">
                 <a class="nav-link" href="{{ route('superadmin.dashboard') }}">
                     <span><i class="ti ti-user"></i>SuperAdmin Dashboard</span>
                 </a>
             </li>
+            @endif
             <!--end nav-item-->
             <!--end nav-item-->
             <!--end nav-item-->

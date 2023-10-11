@@ -259,7 +259,7 @@
             <div class="dropdown-divider mb-0"></div>
             <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
-    document.getElementById('logout-form').submit();"><i
+                    document.getElementById('logout-form').submit();"><i
                     class="ti ti-power font-16 me-1 align-text-bottom"></i> Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
@@ -298,20 +298,26 @@
 
             </li>
             @php
-                $notif_pesanan = DB::table('pesanan')
-                    ->where('pesanan.status', 1)
-                    ->orWhere('pesanan.status', 2)
-                    ->get();
-                $notif_pesanan1 = DB::table('pesanan')
-                    ->where('pesanan.status', 1)
-                    ->get();
-                $notif_pesanan2 = DB::table('pesanan')
-                    ->where('pesanan.status', 2)
-                    ->get();
-                $notif_pesanan3 = DB::table('pesanan')
-                    ->where('pesanan.status', 3)
-                    ->get();
-            @endphp
+    $adminId = Auth::user()->id; // Mendapatkan ID admin yang sedang login
+    $notif_pesanan = DB::table('pesanan')
+        ->join('produk', 'produk.id_produk', '=', 'pesanan.id_produk')
+        ->where('produk.created_by', $adminId) // Hanya pesanan yang dibuat oleh admin yang sedang login
+        ->whereIn('pesanan.status', [1, 2]) // Filter berdasarkan status pesanan yang sesuai
+        ->get();
+
+    $notif_pesanan1 = DB::table('pesanan')
+        ->join('produk', 'produk.id_produk', '=', 'pesanan.id_produk')
+        ->where('produk.created_by', $adminId)
+        ->where('pesanan.status', 1)
+        ->get();
+
+    $notif_pesanan2 = DB::table('pesanan')
+        ->join('produk', 'produk.id_produk', '=', 'pesanan.id_produk')
+        ->where('produk.created_by', $adminId)
+        ->where('pesanan.status', 2)
+        ->get();
+@endphp
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarApps" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -336,12 +342,12 @@
                                 <span class="badge bg-danger">{{ $notif_pesanan2->count() }}</span>
                             @endif
                         </a>
-                        <a href="{{ route('admin.pesanan_deliver') }}" class="dropdown-item">
+                        {{-- <a href="{{ route('admin.pesanan_deliver') }}" class="dropdown-item">
                             Pesanan Dalam Pengiriman
                             @if ($notif_pesanan3->count() > 0)
                                 <span class="badge bg-danger">{{ $notif_pesanan3->count() }}</span>
                             @endif
-                        </a>
+                        </a> --}}
                     </li>
                 </ul>
                 <!--end submenu-->
@@ -404,13 +410,14 @@
                     <span class="badge bg-danger">{{ $notif_chat->count() }}</span>
                     @endif
                 </a>
-
             </li>
+            @if (auth()->user()->is_superadmin == 1)
             <li class="nav-item dropdown parent-menu-item">
                 <a class="nav-link" href="{{ route('superadmin.dashboard') }}">
                     <span><i class="ti ti-user"></i>SuperAdmin Dashboard</span>
                 </a>
             </li>
+            @endif
             <!--end nav-item-->
             <!--end nav-item-->
         </ul><!-- End navigation menu -->
