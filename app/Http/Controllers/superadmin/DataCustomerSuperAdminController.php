@@ -5,9 +5,8 @@ namespace App\Http\Controllers\superadmin;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Controllers\Controller;
-use App\Models\Produk;
 
-class DataSuperAdminController extends Controller
+class DataCustomerSuperAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class DataSuperAdminController extends Controller
      */
     public function index()
     {
-        $users = User::where('type', 'admin')->where('is_superadmin', '0')->get();
-        return view('superadmin.user.index', compact('users'));
+        $users = User::where('type', 'customer')->get();
+        return view('superadmin.customer.index', compact('users'));
     }
 
     /**
@@ -27,7 +26,7 @@ class DataSuperAdminController extends Controller
      */
     public function create()
     {
-        return view('superadmin.user.create');
+        //
     }
 
     /**
@@ -38,17 +37,7 @@ class DataSuperAdminController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'type' => 'required',
-            'foto_profile' => 'required',
-            'hp' => 'required',
-        ]);
-        User::create($request->all());
-        return redirect()->route('user.index')
-            ->with('success','User Created Successfully!');
+        //
     }
 
     /**
@@ -92,14 +81,8 @@ class DataSuperAdminController extends Controller
      */
     public function destroy(User $user)
     {
-
-        $products = Produk::where('created_by', $user->id)->get();
-
-        foreach ($products as $product) {
-            $product->delete();
-        }
-
         $user->delete();
-        return to_route('users.index')->with('success','User Deleted Successfully!');
+        // dd($user);
+        return to_route('customers.index')->with('success','User Deleted Successfully!');
     }
 }

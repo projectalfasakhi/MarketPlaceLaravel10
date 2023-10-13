@@ -49,59 +49,49 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-9">
+            @php
+            function rupiah($angka)
+            {
+                $hasil_rupiah = 'Rp ' . number_format($angka, 2, ',', '.');
+                return $hasil_rupiah;
+            }
+            @endphp
+            @foreach ($produk as $data)
+        <div class="col-md-4">
                 <div class="row">
-                    @php
-                        function rupiah($angka)
-                        {
-                            $hasil_rupiah = 'Rp ' . number_format($angka, 2, ',', '.');
-                            return $hasil_rupiah;
-                        }
-                    @endphp
-                    @forelse ($produk as $data)
-                <div class="col-md-4">
-                        <div class="row">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">{{ Str::title($data->nama_produk) }}</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.html">
-                                    <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="{{ route('customer.produk_detail', $data->id_produk) }}"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3>{{ rupiah($data->harga_produk) }}</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                <div class="product-item">
+                    <div class="product-title">
+                        <a href="#">{{ Str::title($data->nama_produk) }}</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <a href="product-detail.html">
+                            <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
+                        </a>
+                        <div class="product-action">
+                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                            <a href="{{ route('customer.produk_detail', $data->id_produk) }}"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3>{{ rupiah($data->harga_produk) }}</h3>
+                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
 
-                            </div>
-                            <div class="product-price">
-                                {{-- <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a> --}}
-                            </div>
-                        </div>
-                        </div>
+                    </div>
+                    <div class="product-price">
+                        {{-- <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a> --}}
                     </div>
                 </div>
-                    @empty
-                    <div class="alert alert-outline-danger" role="alert">
-                        <strong>Maaf </strong> Produk Saat ini Tidak Tersedia.
-                    </div>
-                    @endforelse
                 </div>
             </div>
+            @endforeach
+        </div>
         </div>
     </div>
 @endsection

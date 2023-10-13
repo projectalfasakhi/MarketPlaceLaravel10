@@ -228,35 +228,72 @@
   <div class="section-header">
       <h1>Recent Product</h1>
   </div>
-  <div class="row align-items-center product-slider product-slider-4">
-      <div class="col-lg-3">
-          <div class="product-item">
-              <div class="product-title">
-                  <a href="#">Product Name</a>
-                  <div class="ratting">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                  </div>
-              </div>
-              <div class="product-image">
-                  <a href="product-detail.html">
-                      <img src="{{ asset('img/product-6.jpg')}}" alt="Product Image">
-                  </a>
-                  <div class="product-action">
-                      <a href="#"><i class="fa fa-cart-plus"></i></a>
-                      <a href="#"><i class="fa fa-heart"></i></a>
-                      <a href="#"><i class="fa fa-search"></i></a>
-                  </div>
-              </div>
-              <div class="product-price">
-                  <h3><span>$</span>99</h3>
-                  <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-              </div>
-          </div>
-      </div>
+  <div class="row align-items-center product-slider product-slider-4"> 
+        @php
+            function rupiah($angka)
+            {
+                $hasil_rupiah = 'Rp ' . number_format($angka, 2, ',', '.');
+                return $hasil_rupiah;
+            }
+        @endphp
+        @foreach ($produk as $data)
+        <div class="col-lg-3">
+            <div class="product-item">
+                <div class="product-title">
+                    <a href="#">{{ Str::title($data->nama_produk) }}</a>
+                    <div class="ratting">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <div class="product-image">
+                    <a href="product-detail.html">
+                        <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
+                    </a>
+                    <div class="product-action">
+                        <a href="#"><i class="fa fa-cart-plus"></i></a>
+                        {{-- <a href="#"><i class="fa fa-heart"></i></a> --}}
+                        <a href="{{ route('customer.produk_detail', $data->id_produk) }}"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="product-price">
+                    <h3>{{ rupiah($data->harga_produk) }}</h3>
+                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    <div class="col-lg-3">
+        <div class="product-item">
+            <div class="product-title">
+                <a href="#">Product Name</a>
+                <div class="ratting">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+            <div class="product-image">
+                <a href="product-detail.html">
+                    <img src="{{ asset('img/product-6.jpg')}}" alt="Product Image">
+                </a>
+                <div class="product-action">
+                    <a href="#"><i class="fa fa-cart-plus"></i></a>
+                    <a href="#"><i class="fa fa-heart"></i></a>
+                    <a href="#"><i class="fa fa-search"></i></a>
+                </div>
+            </div>
+            <div class="product-price">
+                <h3><span>$</span>99</h3>
+                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+            </div>
+        </div>
+    </div>
       <div class="col-lg-3">
           <div class="product-item">
               <div class="product-title">
@@ -369,7 +406,7 @@
               </div>
           </div>
       </div>
-  </div>
+    </div>
 </div>
 </div>
 <div class="footer">
@@ -423,159 +460,7 @@
                 </div>
             </div>
         </div>
-        <div class="row align-items-center product-slider product-slider-4">
-            @php
-                function rupiah($angka)
-                {
-                    $hasil_rupiah = 'Rp ' . number_format($angka, 2, ',', '.');
-                    return $hasil_rupiah;
-                }
-            @endphp
-            @foreach ($produk as $data)
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">{{ Str::title($data->nama_produk) }}</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            {{-- <a href="#"><i class="fa fa-heart"></i></a> --}}
-                            <a href="{{ route('customer.produk_detail', $data->id_produk) }}"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3>{{ rupiah($data->harga_produk) }}</h3>
-                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            @foreach ($produk as $data)
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">{{ Str::title($data->nama_produk) }}</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3>{{ rupiah($data->harga_produk) }}</h3>
-                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            {{-- <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">Product Name</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="{{ asset('img/product-8.jpg')}}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3><span>$</span>99</h3>
-                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">Product Name</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="{{ asset('img/product-9.jpg')}}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3><span>$</span>99</h3>
-                        <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <div class="product-title">
-                        <a href="#">Product Name</a>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="product-image">
-                        <a href="product-detail.html">
-                            <img src="{{ asset('img/product-10.jpg')}}" alt="Product Image">
-                        </a>
-                        <div class="product-action">
-                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <h3><span>$</span>99</h3>
-                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                    </div>
-                </div>
-            </div> --}}
-        </div>
+        
     </div>
 </div>
 
