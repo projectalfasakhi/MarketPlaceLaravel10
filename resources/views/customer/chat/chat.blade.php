@@ -128,7 +128,7 @@
                         </div> <!-- end chat-detail -->
                     </div><!-- end chat-body -->
                     <div class="chat-footer">
-                        <form action="{{ route('customer.post_chat') }}" method="post">
+                        {{-- <form action="{{ route('customer.post_chat') }}" method="post">
                             @csrf
                             @method('post')
                             <div class="row">
@@ -151,7 +151,29 @@
                                     </div>
                                 </div><!-- end col -->
                             </div>
-                        </form><!-- end row -->
+                        </form><!-- end row --> --}}
+                        <form action="{{ route('customer.post_chat') }}" method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col-12 col-md-9">
+                                    <span class="chat-admin">
+                                        <!-- Pilihan admin yang dapat dipilih oleh pengguna -->
+                                        <select name="to_id" class="form-control" required>
+                                            @foreach($admins as $admin)
+                                                <option value="{{ $admin->id }}">{{ $admin->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </span>
+                                    <input type="text" name="pesan" class="form-control" placeholder="Type something here..." required>
+                                </div><!-- col-8 -->
+                                <div class="col-3 text-end">
+                                    <div class="d-none d-sm-inline-block chat-features">
+                                        <button type="submit" class="btn btn-outline-primary"><i class="ti ti-send"></i> Kirim Pesan</button>
+                                    </div>
+                                </div><!-- end col -->
+                            </div>
+                        </form>
+                        
                     </div><!-- end chat-footer -->
                 </div>
                 <!--end chat-box-right -->

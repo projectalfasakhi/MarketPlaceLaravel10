@@ -11,6 +11,10 @@
                         {{-- <div class="pull-right">
                             <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
                         </div> --}}
+                        <form action="{{ route('users2.index') }}" method="GET">
+                            <input type="text" name="search2" placeholder="Cari admin..." autofocus>
+                            <button type="submit">Cari</button>
+                        </form>
                     </div>
                 </div>
                 <div class="card-body table-responsive p-0">
@@ -33,7 +37,7 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->type }}</td>
                         <td>
-                            <form action="{{ route('customers.destroy',$user->id) }}" method="POST">
+                            <form action="{{ route('users.destroy',$user->id) }}" method="POST">
                                 {{-- <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a> --}}
                                 {{-- <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a> --}}
                                 @csrf

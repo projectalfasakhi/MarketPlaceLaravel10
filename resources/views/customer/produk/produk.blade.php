@@ -117,12 +117,22 @@
             <div class="page-title-box">
                 <div class="row">
                     <div class="col align-self-center">
+                        <div class="container-fluid">
                         <h4 class="page-title pb-md-0">Produk</h4>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
                             <li class="breadcrumb-item active">Produk</li>
                         </ol>
+                        </div>
                     </div>
+                    {{-- <div class="col align-self-center">
+                        <div class="container-fluid">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="#">Produk</a></li>
+                            </ul>
+                        </div>
+                    </div> --}}
                     <!--end col-->
                     <div class="col-auto align-self-center">
                         <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">

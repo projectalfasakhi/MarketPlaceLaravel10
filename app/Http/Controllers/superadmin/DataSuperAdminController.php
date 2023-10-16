@@ -14,9 +14,16 @@ class DataSuperAdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::where('type', 'admin')->where('is_superadmin', '0')->get();
+        $search = $request->input('search');
+        $users = User::where('type', 'admin')
+        ->where('is_superadmin', '0')
+        ->when($search, function($query) use ($search) {
+            $query->where('name', 'LIKE', "%$search%")
+            ->orWhere('email', 'LIKE', "%$search%");
+        })
+        ->get();
         return view('superadmin.user.index', compact('users'));
     }
 
@@ -100,6 +107,7 @@ class DataSuperAdminController extends Controller
         }
 
         $user->delete();
+        // dd($user);
         return to_route('users.index')->with('success','User Deleted Successfully!');
     }
 }

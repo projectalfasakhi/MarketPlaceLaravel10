@@ -11,6 +11,10 @@
                         {{-- <div class="pull-right">
                             <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
                         </div> --}}
+                        <form action="{{ route('users.index') }}" method="GET">
+                            <input type="text" name="search" placeholder="Cari admin..." autofocus>
+                            <button type="submit">Cari</button>
+                        </form>                        
                     </div>
                 </div>
                 <div class="card-body table-responsive p-0">
