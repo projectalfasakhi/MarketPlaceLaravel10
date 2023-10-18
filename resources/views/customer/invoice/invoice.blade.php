@@ -52,7 +52,7 @@
                                     <li class="list-inline-item">
                                         <div class="ps-3">
                                             <i class="mdi mdi-web"></i>
-                                            <p class="text-muted mb-0">www.Dapur-Anita.com</p>
+                                            <p class="text-muted mb-0">www.Market-Place.com</p>
                                         </div>
                                     </li>
                                     <li class="list-inline-item">
@@ -99,7 +99,7 @@
                                 <div class="">
                                     <address class="font-13">
                                         <strong class="font-14">Pengirim :</strong><br>
-                                        Dapur Anita<br>
+                                        Halal.id Store<br>
                                         Perumahan Griya Mutiara Prima No. C3<br>
                                         Ds. Mororejo, RT.01/RW.02
                                         Kec. Kaliwungu Kab.Kendal, Jawa Tengah<br>

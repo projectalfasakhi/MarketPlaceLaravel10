@@ -99,7 +99,7 @@
                                 <div class="">
                                     <address class="font-13">
                                         <strong class="font-14">Pengirim :</strong><br>
-                                       Halal.Id<br>
+                                        Halal.Id<br>
                                         Ciawi amaliah<br>
                                         Kp.Tipar RT01/04<br>
                                         <abbr title="Phone">No. Telp:</abbr> 

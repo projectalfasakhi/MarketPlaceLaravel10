@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <title>Dapur Anita</title>
+    <title>Halal.id Store</title>
     <link rel="shortcut icon" href="/dapuranita/logo1.png">
 
 
@@ -56,7 +56,7 @@
                                             <label for="email" class="form-label">Email Akun</label>
                                             <input id="email" type="email"
                                                 class="form-control @error('email') is-invalid @enderror" name="email"
-                                                value="admin@admin.com" placeholder="Tulis Email" required
+                                                placeholder="Tulis Email" required
                                                 autocomplete="email" autofocus>
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -70,7 +70,7 @@
                                             <label class="form-label" for="userpassword">Password</label>
                                             <input id="password" type="password"
                                                 class="form-control @error('password') is-invalid @enderror"
-                                                name="password" placeholder="Tulis Password" value="admin" required autocomplete="current-password">
+                                                name="password" placeholder="Tulis Password" required autocomplete="current-password">
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
