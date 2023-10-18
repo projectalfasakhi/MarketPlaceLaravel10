@@ -13,7 +13,7 @@
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div>
-                        <!--end col-->  
+                        <!--end col-->
                         <div class="col-auto align-self-center">
                             <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
                                 <span class="day-name" id="Day_Name">Today:</span>&nbsp;
@@ -108,7 +108,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="header-img">
                     <div class="img-item">
                         <img src="{{ asset('img/category-1.jpg') }}" />
@@ -123,12 +123,26 @@
                         </a>
                     </div>
                 </div>
+            </div> --}}
+            <div class="col-md-3">
+                <div class="header-img">
+                    @foreach ($produk as $data)
+                        <div class="img-item">
+                            <img src="{{ asset($data->foto_produk) }}" alt="Product Image" />
+                            <a class="img-text" href="#">
+                                <p>{{ $data->deskripsi_produk }}</p>
+                            </a>
+                        </div>
+                        <!-- Hanya menampilkan satu produk, kemudian keluar dari loop -->
+                        @break
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="feature"> 
+<div class="feature">
 <div class="container-fluid">
 <div class="row align-items-center">
     <div class="col-lg-3 col-md-6 feature-col">
@@ -142,7 +156,7 @@
     </div>
     <div class="col-lg-3 col-md-6 feature-col">
         <div class="feature-content">
-            <i class="fa fa-truck"></i>
+            <i class="fa fa-tfitruck"></i>
             <h2>Worldwide Delivery</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur elit
@@ -228,7 +242,7 @@
   <div class="section-header">
       <h1>Recent Product</h1>
   </div>
-  <div class="row align-items-center product-slider product-slider-4"> 
+  <div class="row align-items-center product-slider product-slider-4">
         @php
             function rupiah($angka)
             {
@@ -286,7 +300,7 @@
                     <a href="#"><i class="fa fa-cart-plus"></i></a>
                     <a href="#"><i class="fa fa-heart"></i></a>
                     <a href="#"><i class="fa fa-search"></i></a>
-                </div>
+                   </div>
             </div>
             <div class="product-price">
                 <h3><span>$</span>99</h3>
@@ -460,7 +474,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
 
@@ -519,7 +533,7 @@
                     <!--end card-body-->
                 </div>
                 <!--end card-->
-            </div> 
+            </div>
             <!--end col-->
         </div>
     </div>
