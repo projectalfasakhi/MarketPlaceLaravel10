@@ -6,17 +6,25 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 
-class DataCustomerSuperAdminController extends Controller
+class DataSuperAdmin2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        // $users = User::where('type', 'customer')->get();
-        // return view('superadmin.customer.index', compact('users'));
+    public function index(Request $request)
+    {   
+
+        $search2 = $request->input('search2');
+        $users = User::where('type', 'customer')
+        ->when($search2, function($query) use ($search2) {
+            $query->where('name', 'LIKE', "%$search2%")
+            ->orWhere('email', 'LIKE', "%$search2%");
+        })
+        ->get();
+        // dd($users);
+        return view('superadmin.customer.index2', compact('users'));
     }
 
     /**
@@ -24,7 +32,7 @@ class DataCustomerSuperAdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create2()
     {
         //
     }
@@ -35,7 +43,7 @@ class DataCustomerSuperAdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store2(Request $request)
     {
         //
     }
@@ -46,7 +54,7 @@ class DataCustomerSuperAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show2($id)
     {
         //
     }
@@ -57,7 +65,7 @@ class DataCustomerSuperAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit2($id)
     {
         //
     }
@@ -69,7 +77,7 @@ class DataCustomerSuperAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update2(Request $request, $id)
     {
         //
     }
@@ -80,9 +88,9 @@ class DataCustomerSuperAdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
-    {
+    {   
         $user->delete();
         // dd($user);
-        return to_route('customers.index')->with('success','User Deleted Successfully!');
+        return to_route('users2.index')->with('success','User Deleted Successfully!');
     }
 }

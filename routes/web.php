@@ -23,6 +23,7 @@ use App\Http\Controllers\superadmin\LaporanPenjualanSuperAdminController;
 use App\Http\Controllers\superadmin\PesananSuperAdminController;
 use App\Http\Controllers\superadmin\ProdukSuperAdminController;
 use App\Http\Controllers\superadmin\DataCustomerSuperAdminController;
+use App\Http\Controllers\superadmin\DataSuperAdmin2Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,7 +58,9 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('/superadmin/produk1', ProdukSuperAdminController::class);
 
         Route::resource('users', DataSuperAdminController::class);
-        Route::resource('customers', DataCustomerSuperAdminController::class);
+        
+        Route::resource('users2', DataSuperAdmin2Controller::class);
+        // Route::resource('customers', DataCustomerSuperAdminController::class);
     });
     Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
