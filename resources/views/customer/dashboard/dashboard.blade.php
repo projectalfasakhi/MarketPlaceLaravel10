@@ -156,7 +156,7 @@
     </div>
     <div class="col-lg-3 col-md-6 feature-col">
         <div class="feature-content">
-            <i class="fa fa-truck"></i>
+            <i class="fa fa-tfitruck"></i>
             <h2>Worldwide Delivery</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur elit
