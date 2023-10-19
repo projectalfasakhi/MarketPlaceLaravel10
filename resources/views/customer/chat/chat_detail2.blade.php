@@ -1,4 +1,4 @@
-@extends('admin.layout.master')
+@extends('customer.layout.master')
 
 @section('content')
     <div class="container-fluid">
@@ -51,12 +51,11 @@
                                 @foreach ($chat as $chat)
                                     @php
                                         $badge = DB::Table('chat')
-                                            ->where('to_id', Auth::user()->id)
                                             ->where('from_id', $chat->id)
                                             ->where('status', 'off read')
                                             ->get();
                                     @endphp
-                                    <a href="{{ route('admin.chat_detail', $chat->id) }}" class="media new-message">
+                                    <a href="{{ route('customer.chat_detail2', $chat->id) }}" class="media new-message">
                                         <div class="media-left">
                                             @if ($chat->foto_profile == null)
                                                 <img src="/dapuranita/default.jpg" alt="profile-user"
@@ -154,7 +153,7 @@
                         </div> <!-- end chat-detail -->
                     </div><!-- end chat-body -->
                     <div class="chat-footer">
-                        <form action="{{ route('admin.post_chat', ['id_from' => $id ]) }}" method="post">
+                        <form action="{{ route('customer.post_chat', ['to_id' => $id ]) }}" method="post">
                             @csrf
                             @method('post')
                             <div class="row">

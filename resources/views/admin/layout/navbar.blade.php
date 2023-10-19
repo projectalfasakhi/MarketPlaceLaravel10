@@ -399,7 +399,7 @@
 
             @php
                 $notif_chat = DB::Table('chat')
-                    ->where('to_id', Auth::user()->id)
+                    ->where('to_id', $adminId)
                     ->where('status', 'off read')
                     ->get();
             @endphp

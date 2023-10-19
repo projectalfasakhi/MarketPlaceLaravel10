@@ -55,7 +55,7 @@ class ChatAdminController extends Controller
     public function send(Request $request)
     {
         Chat::create([
-            'from_id'=>1,
+            'from_id'=> Auth::user()->id,
             'to_id'=>$request->id_from,
             'pesan'=>$request->pesan,
             'status'=>'off read',
