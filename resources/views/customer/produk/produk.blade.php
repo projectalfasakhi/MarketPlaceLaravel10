@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            
+
 
             <div class="col-md-9">
                 <div class="row">
@@ -89,7 +89,7 @@
                                     <img src="/produk/{{ $data->foto_produk }}" alt="" class="rounded d-block"
                                         height="180" width="285">
                                     <div class="d-flex justify-content-between align-items-center my-4">
-                                        
+
                                         <div>
                                             <p class="text-muted mb-2">{{ Str::title($data->nama_kategori) }}</p>
                                             <a href="{{ route('customer.produk_detail', $data->id_produk) }}" class="header-title">{{ Str::title($data->nama_produk) }}</a>
@@ -98,7 +98,7 @@
                                             <h5 class="text-dark mt-0 mb-2">{{ rupiah($data->harga_produk) }}</h5>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="d-grid">
                                         <a href="{{ route('customer.produk_detail', $data->id_produk) }}" class="btn btn-de-warning">Lihat Produk</a>
                                     </div>
@@ -117,12 +117,22 @@
             <div class="page-title-box">
                 <div class="row">
                     <div class="col align-self-center">
+                        <div class="container-fluid">
                         <h4 class="page-title pb-md-0">Produk</h4>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
                             <li class="breadcrumb-item active">Produk</li>
                         </ol>
+                        </div>
                     </div>
+                    {{-- <div class="col align-self-center">
+                        <div class="container-fluid">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="#">Produk</a></li>
+                            </ul>
+                        </div>
+                    </div> --}}
                     <!--end col-->
                     <div class="col-auto align-self-center">
                         <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
@@ -151,8 +161,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="product-view-top">
-                                <div class="row"> 
-                                    @if(count($produk) > 0)
+                                <div class="row">
+                                    @if (count($produk) > 0)
                                     @else
                                         <p>Tidak ada hasil pencarian.</p>
                                     @endif
@@ -161,10 +171,11 @@
                                             <form action="{{ route('produk.search') }}" method="GET">
                                                 <div class="input-group mb-3">
                                                     <input type="text" class="form-control" placeholder="Cari Produk..."
-                                                        aria-label="Recipient's username" aria-describedby="button-addon2" name="query">
+                                                        aria-label="Recipient's username" aria-describedby="button-addon2"
+                                                        name="query">
                                                     <button class="btn btn-de-warning" type="button" id="button-addon2"><i
                                                             class="fas fa-search"></i></button>
-                                                        </div>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
@@ -179,45 +190,51 @@
                         }
                         @endphp
                         @foreach ($produk as $data)
-                    <div class="col-md-4">
-                            <div class="row">
-                            <div class="product-item">
-                                <div class="product-title">
-                                    <a href="#">{{ Str::title($data->nama_produk) }}</a>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="product-item">
+                                        <div class="product-title">
+                                            <a href="#">{{ Str::title($data->nama_produk) }}</a>
+                                            <div class="ratting">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="product-image">
+                                            <a href="product-detail.html">
+                                                <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
+                                            </a>
+                                            <div class="product-action">
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="{{ route('customer.produk_detail', $data->id_produk) }}"><i
+                                                        class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h3>{{ rupiah($data->harga_produk) }}</h3>
+                                            </div>
+                                            <div class="buy-now-btn mt-3 text-center">
+                                                <a class="btn btn-primary" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="product-image">
-                                    <a href="product-detail.html">
-                                        <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
-                                    </a>
-                                    <div class="product-action">
-                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                        <a href="{{ route('customer.produk_detail', $data->id_produk) }}"><i class="fa fa-search"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h3>{{ rupiah($data->harga_produk) }}</h3>
-                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-
-                                </div>
-                                <div class="product-price">
-                                    {{-- <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a> --}}
-                                </div>
                             </div>
-                            </div>
-                        </div>
                         @endforeach
                     </div>
-                    
+
+                        <div class="col-md-12">
+                            <div class="text-center">
+                                {{ $produk->links() }}
+                            </div>
+                        </div>
 
                     <!-- Pagination Start -->
-                    <div class="col-md-12">
+                    {{-- <div class="col-md-12">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
                                 <li class="page-item disabled">
@@ -231,9 +248,10 @@
                                 </li>
                             </ul>
                         </nav>
-                    </div>
+                    </div> --}}
                     <!-- Pagination Start -->
                 </div>
+                <!-- Pagination End -->
 
                 <!-- Side Bar Start -->
                 <div class="col-lg-4 sidebar">
@@ -256,16 +274,20 @@
                                     <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
                                 </li>
                             </ul> --}}
-                    <div class="card-body">
-                        <h5 style="text-align: center"> Kategori Produk</h5>
-                        <hr>
-                        @foreach ($kategori as $kategori)
-                            <li class="nav-item">
-                                <a href="{{ route('customer.produk_kategori', $kategori->id_kategori) }}"
-                                    style="color:rgb(239, 51, 98);text-align:left;font-size:15px">{{ Str::title($kategori->nama_kategori) }}</a>
-                            </li>
-                        @endforeach
-                    </div>
+                            <div class="card-body">
+                                <div class="slider-widget brands">
+                                <h5 style="text-align: center"> Kategori Produk</h5>
+                                <hr>
+                                    @foreach ($kategori as $kategori)
+                                        <ul>
+                                            <li>
+                                                <a href="{{ route('customer.produk_kategori', $kategori->id_kategori) }}"
+                                                    style="color:rgb(104, 11, 36);text-align:left;font-size:15px">{{ Str::title($kategori->nama_kategori) }}</a>
+                                            </li>
+                                        </ul>
+                                    @endforeach
+                                </div>
+                            </div>
                         </nav>
                     </div>
                     <div class="sidebar-widget brands">
@@ -287,7 +309,7 @@
                         <a href="#">Phasellus</a>
                         <a href="#">pulvinar</a>
                         <a href="#">Curabitur</a>
-                        <a href="#">Fusce</a>  
+                        <a href="#">Fusce</a>
                         <a href="#">Sem quis</a>
                         <a href="#">Mollis metus</a>
                         <a href="#">Sit amet</a>
@@ -357,7 +379,7 @@
                         <!--end card-body-->
                     </div>
                     <!--end card-->
-                </div> 
+                </div>
                 <!--end col-->
             </div>
         </div>
@@ -436,7 +458,7 @@
         </div>
     </div>
     <!-- Footer End -->
-
+{{--
     <!-- Footer Bottom Start -->
     <div class="footer-bottom">
         <div class="container">
@@ -451,11 +473,8 @@
             </div>
         </div>
     </div>
-    <!-- Footer Bottom End -->
+    <!-- Footer Bottom End --> --}}
 
     <!-- Back to Top -->
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
 @endsection
-
-

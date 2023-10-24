@@ -18,9 +18,9 @@ class ProdukCustomerController extends Controller
         $produk = Produk::join('kategori','kategori.id_kategori','=','produk.id_kategori')
         ->select('produk.*','kategori.nama_kategori')
         ->orderBy('produk.created_at', 'desc')
-        ->get();
+        ->paginate(5);
 
-        return view('customer.produk.produk', compact(['produk','kategori', 'data']))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('customer.produk.produk', compact(['produk','kategori', 'data']));
     }
 
     public function detail_produk($id)
@@ -55,14 +55,14 @@ class ProdukCustomerController extends Controller
     {
         $kategori = Kategori::orderBy('nama_kategori', 'asc')->get();
         $query = $request->input('query'); // Ambil input pencarian dari permintaan HTTP
-    
+
         $produk = Produk::join('kategori', 'kategori.id_kategori', '=', 'produk.id_kategori')
             ->select('produk.*', 'kategori.nama_kategori')
             ->where('produk.nama_produk', 'LIKE', "%$query%") // Melakukan pencarian berdasarkan nama_produk (gantilah sesuai dengan kolom yang ingin Anda cari)
             ->orderBy('produk.created_at', 'desc')
             ->get();
-    
+
         return view('customer.produk.produk', compact(['produk', 'kategori']))->with('i', (request()->input('page', 1) - 1) * 5);
-    
+
     }
 }

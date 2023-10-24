@@ -34,7 +34,7 @@
             <!--end col-->
         </div>
 
-        <div class="row">
+            <div class="row">
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
@@ -50,13 +50,13 @@
                 </div>
             </div>
             @php
-            function rupiah($angka)
-            {
-                $hasil_rupiah = 'Rp ' . number_format($angka, 2, ',', '.');
-                return $hasil_rupiah;
-            }
+                function rupiah($angka)
+                {
+                    $hasil_rupiah = 'Rp ' . number_format($angka, 2, ',', '.');
+                    return $hasil_rupiah;
+                }
             @endphp
-            @foreach ($produk as $data)
+            {{-- @foreach ($produk as $data)
         <div class="col-md-4">
                 <div class="row">
                 <div class="product-item">
@@ -85,13 +85,49 @@
 
                     </div>
                     <div class="product-price">
-                        {{-- <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a> --}}
+                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
                     </div>
                 </div>
                 </div>
             </div>
             @endforeach
+        </div> --}}
+        @foreach ($produk as $data)
+        <div class="col-md-3">
+            <div class="row">
+                <div class="product-item">
+                    <div class="product-title">
+                        <a href="#">{{ Str::title($data->nama_produk) }}</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image mb-4">
+                            <a href="product-detail.html">
+                                <img src="/produk/{{ $data->foto_produk }}" alt="Product Image">
+                            </a>
+                        <div class="product-action">
+                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                            <a href="{{ route('customer.produk_detail', $data->id_produk) }}"><i
+                                    class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-details mb-3">
+                        <div class="product-price">
+                            <h3>{{ rupiah($data->harga_produk) }}</h3>
+                        </div>
+                        <div class="buy-now-btn mt-2 text-center">
+                            <a class="btn btn-primary" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+          @endforeach
         </div>
     </div>
 @endsection

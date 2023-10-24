@@ -20,7 +20,7 @@ class PesananAdminController extends Controller
         ->where('produk.created_by', $adminId)
         ->where('pesanan.status', 1)
         ->get();
-        return view('admin.pesanan.pesanan_list', compact(['pesanan','adminId'])); 
+        return view('admin.pesanan.pesanan_list', compact(['pesanan','adminId']));
     }
 
     public function terima_pesanan($id)

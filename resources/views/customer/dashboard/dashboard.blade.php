@@ -18,7 +18,7 @@
                             <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
                                 <span class="day-name" id="Day_Name">Today:</span>&nbsp;
                                 <span class="" id="Select_date">
-                                    @phpaa
+                                    @php
                                         echo date('d M');
                                     @endphp
                                 </span>
@@ -88,21 +88,21 @@
                     <div class="header-slider-item">
                         <img src="{{ asset ('img/slider-1.jpg') }}" alt="Slider Image" />
                         <div class="header-slider-caption">
-                            <p>Some text goes here that describes the image</p>
+                            <p>Mari Berbelanja di Halal.Id</p>
                             <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
                         </div>
                     </div>
                     <div class="header-slider-item">
                         <img src="{{ asset ('img/slider-2.jpg') }}" alt="Slider Image" />
                         <div class="header-slider-caption">
-                            <p>Some text goes here that describes the image</p>
+                            <p>Mari Berbelanja di Halal.Id</p>
                             <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
                         </div>
                     </div>
                     <div class="header-slider-item">
                         <img src="{{ asset ('img/slider-3.jpg') }}" alt="Slider Image" />
                         <div class="header-slider-caption">
-                            <p>Some text goes here that describes the image</p>
+                            <p>Mari Berbelanja di Halal.Id</p>
                             <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Shop Now</a>
                         </div>
                     </div>
@@ -133,6 +133,12 @@
                                 <p>{{ $data->deskripsi_produk }}</p>
                             </a>
                         </div>
+                        <div class="img-item">
+                            <img src="{{ asset($data->foto_produk) }}" alt="Product Image" />
+                            <a class="img-text" href="#">
+                                <p>{{ $data->deskripsi_produk }}</p>
+                            </a>
+                        </div>
                         <!-- Hanya menampilkan satu produk, kemudian keluar dari loop -->
                         @break
                     @endforeach
@@ -148,36 +154,36 @@
     <div class="col-lg-3 col-md-6 feature-col">
         <div class="feature-content">
             <i class="fab fa-cc-mastercard"></i>
-            <h2>Secure Payment</h2>
+            <h2>Pembayaran</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur elit
+                Pembayran Aman dan Mudah
             </p>
         </div>
     </div>
     <div class="col-lg-3 col-md-6 feature-col">
         <div class="feature-content">
             <i class="fa fa-truck"></i>
-            <h2>Worldwide Delivery</h2>
+            <h2>Pengiriman</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur elit
+                Pengiriman ke seluruh daerah indonesia
             </p>
         </div>
     </div>
     <div class="col-lg-3 col-md-6 feature-col">
         <div class="feature-content">
             <i class="fa fa-sync-alt"></i>
-            <h2>90 Days Return</h2>
+            <h2>10 Hari Pengembalian</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur elit
+                Pengembalian maximal 10 hari
             </p>
         </div>
     </div>
     <div class="col-lg-3 col-md-6 feature-col">
         <div class="feature-content">
             <i class="fa fa-comments"></i>
-            <h2>24/7 Support</h2>
+            <h2>24/7 Bantuan</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur elit
+                Admin Selalu siap melayani anda
             </p>
         </div>
     </div>
@@ -235,12 +241,13 @@
 </div>
 </div>
 </div>
+
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 <!-- Recent Product Start -->
 <div class="recent-product product">
 <div class="container-fluid">
   <div class="section-header">
-      <h1>Recent Product</h1>
+      <h1>Produk Terbaru</h1>
   </div>
   <div class="row align-items-center product-slider product-slider-4">
         @php
@@ -273,9 +280,17 @@
                         <a href="{{ route('customer.produk_detail', $data->id_produk) }}"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
-                <div class="product-price">
+                {{-- <div class="product-price">
                     <h3>{{ rupiah($data->harga_produk) }}</h3>
                     <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                </div> --}}
+                <div class="product-details">
+                    <div class="product-price">
+                        <h3>{{ rupiah($data->harga_produk) }}</h3>
+                    </div>
+                    <div class="buy-now-btn mt-3 text-center">
+                        <a class="btn btn-primary" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -428,18 +443,18 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="footer-widget">
-                    <h2>Get in Touch</h2>
+                    <h2>Alamat</h2>
                     <div class="contact-info">
-                        <p><i class="fa fa-map-marker"></i>123 E Store, Los Angeles, USA</p>
-                        <p><i class="fa fa-envelope"></i>email@example.com</p>
-                        <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                        <p><i class="fa fa-map-marker"> </i>Bogor</p>
+                        <p><i class="fa fa-envelope"></i>halal.id@gmail.com</p>
+                        <p><i class="fa fa-phone"></i>+62 878 2267 3554</p>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6">
                 <div class="footer-widget">
-                    <h2>Follow Us</h2>
+                    <h2>Ikuti Kami</h2>
                     <div class="contact-info">
                         <div class="social">
                             <a href=""><i class="fab fa-twitter"></i></a>

@@ -192,7 +192,7 @@
             @endforeach
         </div>
     </div> --}}
-    
+
     <!-- Breadcrumb Start -->
     <div class="breadcrumb-wrap">
         <div class="container-fluid">
@@ -204,7 +204,7 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-    
+
     <!-- Product Detail Start -->
          @php
             function rupiah($angka)
@@ -256,7 +256,7 @@
                                             <button type="button" class="btn">M</button>
                                             <button type="button" class="btn">L</button>
                                             <button type="button" class="btn">XL</button>
-                                        </div> 
+                                        </div>
                                     </div> --}}
                                     {{-- <div class="p-color">
                                         <h4>Color:</h4>
@@ -264,7 +264,7 @@
                                             <button type="button" class="btn">White</button>
                                             <button type="button" class="btn">Black</button>
                                             <button type="button" class="btn">Blue</button>
-                                        </div> 
+                                        </div>
                                     </div> --}}
                                     <div class="action">
                                         <form action="{{ route('customer.keranjang_store') }}" method="post"
@@ -284,7 +284,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row product-detail-bottom">
                         <div class="col-lg-12">
                             <ul class="nav nav-pills nav-justified">
@@ -339,7 +339,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="product">
                         <div class="section-header">
                             <h1>Related Products</h1>
@@ -489,7 +489,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Side Bar Start -->
                 <div class="col-lg-4 sidebar">
                     <div class="sidebar-widget category">
@@ -520,12 +520,9 @@
                             </ul>
                         </nav>
                     </div>
-                    
-<<<<<<< HEAD
-                 
-                    
-=======
->>>>>>> 13226cd0132f6f0a1375aa0a1ba77195a0306e0a
+
+
+
                     <div class="sidebar-widget brands">
                         <h2 class="title">Our Brands</h2>
                         <ul>
@@ -537,7 +534,7 @@
                             <li><a href="#">Sagittis</a><span>(28)</span></li>
                         </ul>
                     </div>
-                    
+
                     <div class="sidebar-widget tag">
                         <h2 class="title">Tags Cloud</h2>
                         <a href="#">Lorem ipsum</a>
@@ -559,7 +556,7 @@
         </div>
     </div>
     <!-- Product Detail End -->
-    
+
     <!-- Brand Start -->
     <div class="brand">
         <div class="container-fluid">
@@ -615,14 +612,14 @@
                     <!--end card-body-->
                 </div>
                 <!--end card-->
-            </div> 
+            </div>
             <!--end col-->
         </div>
         </div>
 
     </div>
     <!-- Brand End -->
-        
+
     <!-- Footer Start -->
     <div class="footer">
         <div class="container-fluid">
@@ -637,7 +634,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
                         <h2>Follow Us</h2>
@@ -675,7 +672,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row payment align-items-center">
                 <div class="col-md-6">
                     <div class="payment-method">
@@ -695,7 +692,7 @@
         </div>
     </div>
     <!-- Footer End -->
-    
+
     <!-- Footer Bottom Start -->
     <div class="footer-bottom">
         <div class="container">
@@ -710,8 +707,8 @@
             </div>
         </div>
     </div>
-    <!-- Footer Bottom End -->       
-    
+    <!-- Footer Bottom End -->
+
     <!-- Back to Top -->
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 @endsection
